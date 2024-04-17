@@ -1,0 +1,85 @@
+.carousel-valorantPage{
+    display: flex;
+    margin-top: 70px;
+}
+
+
+.carousel-pageCompra{
+     position: relative;
+     margin-top: 20px;
+     height: 100px;
+     width: 150px;
+}
+
+#compras-carousel{
+
+    margin-left: 275px;
+}
+
+#valorant-imgCompras{
+
+    width: 750px;
+    margin-left: 250px;
+    border-radius: 8px;
+   
+}
+
+.valorantHistory {
+    margin-top: 10px;
+    text-indent: 20px;
+    text-align:justify;
+    font-size:large;
+    margin-left: 50px;
+    float: inline-start;
+    width: 650px;
+    
+}
+
+.bannerGame{
+    border-radius: 8px;
+    margin-left: 50px;
+    height: 200px;
+    width: 650px;
+
+}
+
+.banner-history {
+    display: block;
+}
+
+.barra-compra {
+
+    background-color: grey;
+     display: flex;
+     height: 100px;
+     margin: 25px 125px;
+     
+
+}
+
+.descriptionValue {
+    padding-top: 10px;
+    text-align: center;
+    border: solid 2px black;;
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 1400px;
+    height: 50px;
+    width: 100px;
+    color: white;
+    background-color: black;
+
+
+}
+
+
+.BtnCompra {
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 1500px;    
+    color: white;
+    background-color: green;
+    height: 50px;
+    width: 100px;
+}
+

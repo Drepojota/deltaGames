@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #001936;
+    height: 100px;
+   
+    
+}
+
+.navbar-brand {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.img-logo {
+    height: 100px;
+    width: auto;
+    padding-left: 100px;
+}
+
+.navbar-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-buttons button {
+    margin-left: 10px;
+}

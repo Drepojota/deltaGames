@@ -1,0 +1,62 @@
+#setaRolagem2 {
+    padding-top: 45px;
+    display: block;
+    margin: auto;
+}
+ 
+#setaHome {
+    padding-top: 60px;
+    display: block;
+    margin: auto;    
+}
+
+.col{
+    display: block;
+    margin: auto;
+    padding-top: 25px;
+
+}
+
+#container-popGames {
+    margin-top: 40px;
+    border-top: solid 1px black;
+    padding-top: 40px;
+}
+
+#container-espGames {
+    margin-top: 60px;
+    border-top: solid 1px black;
+    padding-top: 40px;
+}
+
+#container-marcasGames {
+    margin-top: 60px;
+    border-top: solid 1px black;
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+#container-marcasGames2{
+    margin-top: 60px;
+    border-top: solid 1px black;
+    padding-top: 60px;
+    margin-bottom: 20px;
+    padding-bottom: 60px;
+}
+
+
+.card-text{
+    text-align: center;
+    font-size: large;
+    
+}
+
+.card-title{
+    text-align: center;
+    font-size: large;
+}
+
+.card-img {
+    width: 250px;
+    height: 180px;
+}

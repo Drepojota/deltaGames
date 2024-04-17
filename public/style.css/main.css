@@ -1,0 +1,9 @@
+@import "base/_reset.css";
+@import "layout/_nav.css";
+@import "layout/_footer.css";
+@import "layout/_mainCarrinho.css";
+@import "layout/_mainHome.css";
+@import "layout/_homeSection.css";
+@import "layout/main.css";
+@import "layout/_riot.css";
+@import "layout/valorant.css";
