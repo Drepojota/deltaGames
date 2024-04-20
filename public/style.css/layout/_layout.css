@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+nav.nav-menu {
+    width: 80px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0px 40px 1%;
+    box-shadow: 3px 0 0 #002b4b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .4s;
+    z-index: 9999;
+}
+
+nav.nav-menu:hover {
+    width: 300px;
+    transition: 1s;
+    ul li.item-menu a .icon i{
+        transition: .4s;
+        margin-left: 0px;
+    }
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu {
+    transition: .4s;
+    border-radius: 3px;
+}
+
+ul li.item-user {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+ul li.item-menu:hover {
+    background: #002b4b;
+}
+
+ul li.item-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    line-height: 40px;
+    text-align: center;
+}
+
+ul li.item-menu a .txt-link {
+    margin-left: 40px;
+}
+
+ul li.item-menu a .icon i{
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+/* ------Footer------*/
+
+footer.footer-main {
+    background-color: #202020;
+    color: white;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    margin-left: 83px;
+}
+
+footer div.rodape-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+footer.rodape-footer div.txt-footer {
+    text-align: center;
+    padding-top: 35px;
+}
