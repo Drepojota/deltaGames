@@ -10,7 +10,7 @@ class ProdutoController extends Controller
 {
     public function pagProduto()
     {
-        return view('produtos'/*nome da view */)->with('produto'/*nome da variavel */ , produto::all());
+        return view('produtos')->with('produto' , produto::all());
     }
-    
+
 }

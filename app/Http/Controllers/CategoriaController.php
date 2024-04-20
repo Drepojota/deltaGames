@@ -9,7 +9,6 @@ class CategoriaController extends Controller
 {
     public function indexCat()
     {
-        // dd(Categoria::all());
         return view('categoria.indexCat')->with('categorias', Categoria::all());
     }
 
