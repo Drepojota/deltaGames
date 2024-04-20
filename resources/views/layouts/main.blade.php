@@ -5,43 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="style.css/main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
 </head>
 <body>
-    <header>
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a href="#"><img src="image/nav/menu.png" alt=""></a>
-            <div class="navbar-brand">
-                <a class="navbar-brand" href="#"><img class="img-logo" src="/image/nav/logo.png" alt=""></a>
-            </div>
-            <div class="navbar-buttons">
-                <form class="d-flex" role="search">
-                    <a href="cart.html"><img src="image/nav/carrinho.png"></a>
-                    <button class="btn" type="submit"><img src="image/nav/lupa.png" alt=""></button>
-                </form>
-            </div>
-        </div>
-    </nav>
-  </header>
+<nav class="nav-menu">
+
+<ul>
+    <li class="item-menu">
+        <a href="#">
+            <span class="icon"><i class="bi bi-house"></i></span>
+            <span class="txt-link">Home</span>
+        </a>
+    </li>
+    <li class="item-menu">
+        <a href="#">
+            <span class="icon"><i class="bi bi-controller"></i></span>
+            <span class="txt-link">Games</span>
+        </a>
+    </li>
+    <li class="item-menu">
+        <a href="#">
+            <span class="icon"><i class="bi bi-cart"></i></span>
+            <span class="txt-link">Cart</span>
+        </a>
+    </li>
+    <li class="item-menu item-user">
+        <a href="#">
+            <span class="icon"><i class="bi bi-person-circle"></i></span>
+            <span class="txt-link">User</span>
+        </a>
+    </li>
+</ul>
+
+</nav>
   
     @yield('content')
    
-    <footer>
-      <div class="rodape">
-          <div>
-              <span>Copyright &copy; 2024 Delta</span>
-          </div>
-          <div>
-              <span>Termos de uso</span>
-              <span>| Politica |</span>
-              <span>Suporte</span>
-          </div>
-      </div>
-  </footer>
+    <footer class="footer-main">
+        <div class="rodape-footer">
+            <div class="txt-footer">
+                <span>Copyright &copy; 2024 Delta</span>
+            </div>
+            <div class="txt-footer">
+                <span>Termos de uso</span>
+                <span>| Politica |</span>
+                <span>Suporte</span>
+            </div>
+        </div>
+    </footer>
+    
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
