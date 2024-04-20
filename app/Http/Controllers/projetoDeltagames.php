@@ -14,10 +14,10 @@ class projetoDeltagames extends Controller
     }
 
     public function riot(){
-        return view('riot');
+        return view('dev');
     }
 
     public function valorant(){
-        return view('valorant');
+        return view('produtos');
     }
 }
