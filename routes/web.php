@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\projetoDeltagames;
+use App\Http\Controllers\ProdutoController;
 
-Route::get('/home', [projetoDeltagames::class, 'home']);
-Route::get('/cart', [projetoDeltagames::class, 'cart']);
-Route::get('/riot', [projetoDeltagames::class, 'riot']);
-Route::get('/valorant', [projetoDeltagames::class, 'valorant']);
+Route::get('/home', [ProdutoController::class, 'index']);
+Route::get('/cart', [ProdutoController::class, 'cart']);
+Route::get('/dev', [ProdutoController::class, 'dev']);
+Route::get('/produto', [ProdutoController::class, 'pagProduto']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
