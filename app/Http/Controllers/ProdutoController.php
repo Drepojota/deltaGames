@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\produto;
+use App\Models\Produto;
 
 
 class ProdutoController extends Controller
 {
     public function pagProduto()
     {
-        return view('produtos')->with('\produtos' , produto::all());
+        return view('ApresProduto')->with('\ApresProduto' , produto::all());
     }
     public function dev()
     {
@@ -23,6 +23,10 @@ class ProdutoController extends Controller
     public function home()
     {
         return view('home')->with('\home' , produto::all());
+    }
+    public function allProducts()
+    {
+        return view('allProducts')->with('\Jogos' , produto::all());
     }
 
 }
