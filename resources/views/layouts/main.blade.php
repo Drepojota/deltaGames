@@ -33,7 +33,7 @@
         </a>
     </li>
     <li class="item-menu item-user">
-        <a href="#">
+        <a href="/login">
             <span class="icon"><i class="bi bi-person-circle"></i></span>
             <span class="txt-link">User</span>
         </a>
