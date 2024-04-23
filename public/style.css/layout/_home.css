@@ -60,3 +60,18 @@
     width: 250px;
     height: 180px;
 }
+
+.img-carousel{
+    display: block;
+    border-radius: 3%;
+    margin: auto;
+    width: 1500px;
+    height: 800px;
+}
+
+.setaRolagem {
+    padding-top: 5px;
+    display: block;
+    margin: auto;
+}
+ 
