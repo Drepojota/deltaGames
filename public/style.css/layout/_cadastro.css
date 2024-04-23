@@ -4,7 +4,7 @@ body{
     overflow: hidden;
 }
 
-.area-login{
+.area-cadastro{
     display: flex;
     height: 100vh;
     justify-content: center;

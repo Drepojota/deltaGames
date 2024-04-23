@@ -5,10 +5,15 @@ use App\Models\Produto;
 
 use Illuminate\Http\Request;
 
-class clientController extends Controller
+class ClientController extends Controller
 {
     public function login()
     {
         return view('login')->with('\login' , produto::all());
+    }
+
+    public function cadastro()
+    {
+        return view('cadastro')->with('\cadastro' , produto::all());
     }
 }

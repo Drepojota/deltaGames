@@ -6,7 +6,7 @@
     
 
 <body>
-    <section class="area-login">
+    <section class="area-cadastro">
         <div class="login">
                 <div>
                     <img src="image/nav/logo.png" alt="">
