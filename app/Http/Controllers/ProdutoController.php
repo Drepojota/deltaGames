@@ -28,5 +28,5 @@ class ProdutoController extends Controller
     {
         return view('allProducts')->with('\Jogos' , produto::all());
     }
-
+    
 }
