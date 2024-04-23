@@ -1,7 +1,6 @@
 @import "base/_reset.css";
-@import "layout/_mainCarrinho.css";
-@import "layout/_mainHome.css";
-@import "layout/_homeSection.css";
-@import "layout/_riot.css";
+@import "layout/_carrinho.css";
+@import "layout/_home.css";
+@import "layout/_dev.css";
 @import "layout/_produtos.css";
 @import "layout/_layout.css";
