@@ -7,5 +7,6 @@ Route::get('/cart', [ProdutoController::class, 'cart']);
 Route::get('/dev', [ProdutoController::class, 'dev']);
 Route::get('/ApresProduto', [ProdutoController::class, 'pagProduto']);
 Route::get('/Jogos', [ProdutoController::class, 'allProducts']);
+Route::get('/login', [ ProdutoController::class, 'login']); 
 
 
