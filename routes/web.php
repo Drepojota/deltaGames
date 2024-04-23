@@ -1,11 +1,11 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\projetoDeltagames;
+use App\Http\Controllers\ProdutoController;
 
-Route::get('/layoutsBlade/home', [projetoDeltagames::class, 'home']);
-Route::get('/layoutsBlade/cart', [projetoDeltagames::class, 'cart']);
-Route::get('/layoutsBlade/dev', [projetoDeltagames::class, 'dev']);
-Route::get('/layoutsBlade/produtos', [projetoDeltagames::class, 'produtos']);
+Route::get('/home', [ProdutoController::class, 'home']);
+Route::get('/cart', [ProdutoController::class, 'cart']);
+Route::get('/dev', [ProdutoController::class, 'dev']);
+Route::get('/produtos', [ProdutoController::class, 'pagProduto']);
 
 
 

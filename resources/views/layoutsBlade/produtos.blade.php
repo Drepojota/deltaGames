@@ -1,7 +1,7 @@
 {{--Importação de layout--}}
 
 @extends('layouts.main')
-    @section('title', 'Valorant')
+    @section('title', 'Produtos')
     
     
     @section('content')
