@@ -29,9 +29,4 @@ class ProdutoController extends Controller
         return view('allProducts')->with('\Jogos' , produto::all());
     }
 
-    public function login()
-    {
-        return view('login')->with('\login' , produto::all());
-    }
-    
 }
