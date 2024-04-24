@@ -1,5 +1,5 @@
 @extends('layouts.main')
-    @section('title', 'Valorant')
+    @section('title', 'Login')
     
     
     @section('content')
