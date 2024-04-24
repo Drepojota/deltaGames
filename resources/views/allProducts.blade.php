@@ -4,8 +4,5 @@
     
     @section('content')
 
-    @foreach  ($Fotos as $Imagem)
-    {{$produto->Categoria->count()}}
 
-    @endforeach
     @endsection

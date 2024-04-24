@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Produto;
+
 
 
 class ProdutoController extends Controller
@@ -26,12 +26,12 @@ class ProdutoController extends Controller
     }
     public function allProducts()
     {
-        return view('allProducts')->with('\Jogos' , produto::all());
+        return view('allProducts')->with('\Jogos' , Produto::all());
     }
 
     public function login()
     {
-        return view('login')->with('\login' , produto::all());
+        return view('login')->with('\login' , Produto::all());
     }
     
 }
