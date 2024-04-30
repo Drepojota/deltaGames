@@ -46,7 +46,7 @@
             <div class="card">
               <img src="image/header-carousel/fifa.jpeg" class="card-img" alt="...">
               <div class="card-body">
-                <h5 class="card-title">EA Sport FC 24</h5>
+                <h5 class="card-title">{{$CATEGORIA->CATEGORIA_ID}}</h5>
                 <p class="card-text"><strong>R$249,90</strong></p>
               </div>
             </div>

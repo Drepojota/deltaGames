@@ -15,25 +15,25 @@
 
 <ul>
     <li class="item-menu">
-        <a href="#">
+        <a href="/home">
             <span class="icon"><i class="bi bi-house"></i></span>
             <span class="txt-link">Home</span>
         </a>
     </li>
     <li class="item-menu">
-        <a href="#">
+        <a href="/allProducts">
             <span class="icon"><i class="bi bi-controller"></i></span>
             <span class="txt-link">Games</span>
         </a>
     </li>
     <li class="item-menu">
-        <a href="#">
+        <a href="/cart">
             <span class="icon"><i class="bi bi-cart"></i></span>
             <span class="txt-link">Cart</span>
         </a>
     </li>
     <li class="item-menu item-user">
-        <a href="#">
+        <a href="/login">
             <span class="icon"><i class="bi bi-person-circle"></i></span>
             <span class="txt-link">User</span>
         </a>
