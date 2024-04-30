@@ -39,88 +39,17 @@
       </main>
 
     <article>
-      <div class="container" id="container-popGames"> 
-        <h2>Jogos Populares</h2>
-        <div class="row row-cols-1 row-cols-md-4">
-          <div class="col">
-            <div class="card">
-              <img src="image/header-carousel/fifa.jpeg" class="card-img" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">{{$CATEGORIA->CATEGORIA_ID}}</h5>
-                <p class="card-text"><strong>R$249,90</strong></p>
-              </div>
-            </div>
-          </div>
-        <div class="col">
-          <div class="card">
-            <img src="image/header-carousel/forza.jpg" class="card-img" alt="...">
-             <div class="card-body">
-                <h5 class="card-title">Forza Horizon 5</h5>
-                 <p class="card-text"><strong>R$379,00</strong></p>
-             </div>
-          </div>
+    @foreach($produtos as $produto)
+<div class="col">
+    <div class="card">
+        <img src="{{ asset($produto->imagem) }}" class="card-img" alt="{{ $produto->nome }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ $produto->nome }}</h5>
+            <p class="card-text"><strong>R${{ $produto->preco }}</strong></p>
         </div>
-        <div class="col">
-          <div class="card">
-            <img src="image/header-carousel/godrag.jpg" class="card-img" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">God Of War - Ragnarok</h5>
-              <p class="card-text"><strong>R$429,00</strong></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <a href="valorant.html"><img src="image/header-carousel/valorant.jpg" class="card-img" alt="..."></a>
-            <div class="card-body">
-              <h5 class="card-title">Valorant</h5>
-              <p class="card-text">R$0,00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> 
-    <div class="container" id="container-espGames"> 
-      <h2> Esporte</h2>
-      <div class="row row-cols-1 row-cols-md-4">
-        <div class="col">
-          <div class="card">
-            <img src="image/header-carousel/fifa.jpeg" class="card-img" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">EA Sport FC 24</h5>
-              <p class="card-text"><strong>R$249,90</strong></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="image/header-carousel/2k24-basquete.jpeg" class="card-img" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">2k24 - NBA</h5>
-              <p class="card-text"><strong>R$189,00</strong></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="image/header-carousel/Tennis-World-Tour-1.jpg" class="card-img" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tennis World Tour 1</h5>
-              <p class="card-text"><strong>R$149,00</strong></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="image/header-carousel/ufc5.jpg" class="card-img" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">UFC 5</h5>
-              <p class="card-text">R$99,00</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+</div>
+@endforeach
 
     <div class="container" id="container-marcasGames"> 
       <h2>Desenvolvedoras</h2>
