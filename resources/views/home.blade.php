@@ -39,28 +39,6 @@
       </main>
 
     <article>
-<<<<<<< HEAD
-      <div class="container" id="container-popGames"> 
-        <h2>Jogos Populares</h2>
-        <div class="row row-cols-1 row-cols-md-4">
-          <div class="col">
-            <div class="card">
-              <img src="image/header-carousel/fifa.jpeg" class="card-img" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text"><strong>R$249,90</strong></p>
-              </div>
-            </div>
-          </div>
-        <div class="col">
-          <div class="card">
-            <img src="image/header-carousel/forza.jpg" class="card-img" alt="...">
-             <div class="card-body">
-                <h5 class="card-title">Forza Horizon 5</h5>
-                 <p class="card-text"><strong>R$379,00</strong></p>
-             </div>
-          </div>
-=======
     @foreach($produtos as $produto)
 <div class="col">
     <div class="card">
@@ -68,7 +46,6 @@
         <div class="card-body">
             <h5 class="card-title">{{ $produto->nome }}</h5>
             <p class="card-text"><strong>R${{ $produto->preco }}</strong></p>
->>>>>>> 86d870ddd1ec1c6452fbfd368e709b6641dc5d5e
         </div>
     </div>
 </div>
