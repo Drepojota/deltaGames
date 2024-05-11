@@ -1,12 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 body {
     height: 100vh;
+    background-color: #2c2c2c;
+    margin-left: 80px;
 }
 
 nav.nav-menu {
@@ -23,23 +18,34 @@ nav.nav-menu {
     z-index: 9999;
 }
 
-nav.nav-menu:hover {
+nav.nav-menu.expandir {
     width: 300px;
     transition: 1s;
+    color: white;
     ul li.item-menu a .icon i{
         transition: .4s;
         margin-left: 0px;
     }
 }
 
+ul li.item-menu a .icon i{
+    margin-right: 15px;
+    left: 0;
+}
+
 ul {
     height: 100%;
+    padding: 0;
     list-style-type: none;
 }
 
 ul li.item-menu {
     transition: .4s;
     border-radius: 3px;
+}
+
+ul li.ativo{
+    background-color: #002b4b;
 }
 
 ul li.item-user {
@@ -57,19 +63,26 @@ ul li.item-menu a {
     color: white;
     text-decoration: none;
     font-size: 20px;
-    padding: 20px 4%;
+    padding: 25px 4%;
     display: flex;
     line-height: 40px;
     text-align: center;
 }
 
 ul li.item-menu a .txt-link {
-    margin-left: 40px;
+    margin-left: 70px;
+    transition: .6s;
+    opacity: 0;
+}
+
+nav.nav-menu.expandir .txt-link {
+    margin-left: 20px;
+    opacity: 1;
 }
 
 ul li.item-menu a .icon i{
     font-size: 24px;
-    margin-left: 10px;
+    padding-left: 12px;
 }
 
 /* ------Footer------*/
@@ -81,7 +94,7 @@ footer.footer-main {
     width: 100%;
     position: fixed;
     bottom: 0;
-    margin-left: 83px;
+    margin-left: 0px;
 }
 
 footer div.rodape-footer {
@@ -94,4 +107,103 @@ footer div.rodape-footer {
 footer.rodape-footer div.txt-footer {
     text-align: center;
     padding-top: 35px;
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        margin-left: 60px;
+    }
+
+    ul li.item-menu {
+        transition: .4s;
+        border-radius: 3px;
+        margin-left: 15px;
+    }
+
+    nav.nav-menu {
+        width: 60px;
+        height: 100%;
+        background-color: #202020;
+        padding: 30px 0px 30px 1%;
+        box-shadow: 3px 0 0 #002b4b;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transition: .4s;
+        z-index: 9999;
+    }
+
+    nav.nav-menu.expandir {
+        width: 200px;
+        transition: 1s;
+        color: white;
+        ul li.item-menu a .icon i{
+            transition: .4s;
+            margin-left: 0px;
+        }
+    }
+
+    ul li.item-menu a .icon i{
+        font-size: 20px;
+        padding-left: 4px;
+    }
+
+    footer.footer-main {
+        background-color: #202020;
+        color: white;
+        height: 100px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        padding-bottom: 5px;
+    }
+
+    footer div.rodape-footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer.rodape-footer div.txt-footer {
+        text-align: center;
+        padding-top: 10px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    ul li.item-menu {
+        transition: .4s;
+        border-radius: 3px;
+        margin-left: 15px;
+    }
+
+    nav.nav-menu.expandir {
+        width: 250px;
+        transition: 1s;
+        color: white;
+        ul li.item-menu a .icon i{
+            transition: .4s;
+            margin-left: 0px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px) and (min-width: 768px) {
+    ul li.item-menu {
+        transition: .4s;
+        border-radius: 3px;
+        margin-left: 15px;
+    }
+
+    nav.nav-menu.expandir {
+        width: 250px;
+        transition: 1s;
+        color: white;
+        ul li.item-menu a .icon i{
+            transition: .4s;
+            margin-left: 0px;
+        }
+    }
 }
