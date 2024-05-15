@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class produto extends Model
 {
@@ -12,7 +13,7 @@ class produto extends Model
     protected $primaryKey = "PRODUTO_ID"; //Especifica a coluna de chave primária da tabela.
     public $timestamps = false; //Isso indica que o modelo não usa carimbos de data/hora (colunas created_at e updated_at).
 
-    public function Categoria(){
+    public function Categoria(): BelongsTo{
         return $this->belongsTo(Categoria::class,'CATEGORIA_ID', 'CATEGORIA_ID'); //Isso define uma relação de pertencimento com o modelo, onde a chave estrangeira está nas tabelas 
     }
 
