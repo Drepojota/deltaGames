@@ -11,7 +11,7 @@ class ProdutoController extends Controller
 {
     public function home()
     {
-        $produtos = Produto::all();
+        $produtos = produto::all();
         return view('home', compact('produtos'));
     }
 
@@ -27,12 +27,18 @@ class ProdutoController extends Controller
 
     public function allProducts()
     {
-        return view('allProducts')->with('\Jogos' , Produto::all());
+        $produtos = produto::all();
+        return view('allProducts')->with('\Jogos' , produto::all());
     }
 
     public function login()
     {
-        return view('login')->with('\login' , Produto::all());
+        return view('login')->with('\login' , produto::all());
+    }
+
+    public function ApresProduto()
+    {
+        return view('ApresProduto')->with('\pagProduto' , Produto::all());
     }
     
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
         </a>
     </li>
     <li class="item-menu">
-        <a href="/allProducts">
+        <a href="/jogos">
             <span class="icon"><i class="bi bi-controller"></i></span>
             <span class="txt-link">Games</span>
         </a>

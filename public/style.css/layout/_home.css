@@ -24,9 +24,9 @@ body {
 }
 
 #container-popGames {
-    margin-top: 40px;
+    margin-top: 20px;
     border-top: solid 1px black;
-    padding-top: 40px;
+    padding-top: 25px;
 }
 
 #container-espGames {
@@ -53,18 +53,19 @@ body {
 
 .card-text{
     text-align: center;
-    font-size: large;
-    
+    font-size: large;    
 }
 
 .card-title{
     text-align: center;
     font-size: large;
+    
 }
 
 .card-img {
-    width: 250px;
-    height: 180px;
+    width: 350px;
+    height: 350px;
+    
 }
 
 .img-carousel{
@@ -80,4 +81,6 @@ body {
     display: block;
     margin: auto;
 }
+
+
  
