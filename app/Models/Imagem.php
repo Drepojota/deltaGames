@@ -12,5 +12,4 @@ class Imagem extends Model
     protected $primaryKey = "IMAGEM_ID";
     protected $foreignKey = "PRODUTO_ID";
 
-   
 }

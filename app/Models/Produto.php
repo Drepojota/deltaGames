@@ -21,7 +21,7 @@ class produto extends Model
         return $this->belongsTo(Estoque::class,'PRODUTO_ID', 'PRODUTO_ID'); // Isso define uma relação de pertencimento com o modelo, onde a chave estrangeira está nas tabelas e ."Estoque" "PRODUTO_ID" "produto" "estoque"
     }
     
-    public function fotos(){
+    public function Imagem(){
         return $this-> hasMany(Imagem::class, 'PRODUTO_ID','PRODUTO_ID'); //  Isso define uma relação has-many com o modelo, onde a chave estrangeira está na mesa."Imagem" "PRODUTO_ID" "imagem"
     }
 }

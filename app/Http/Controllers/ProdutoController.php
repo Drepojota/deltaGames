@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
-
+use App\Models\Imagem;
 
 
 
@@ -11,6 +11,7 @@ class ProdutoController extends Controller
 {
     public function home()
     {
+        $imagens = imagem::all();
         $produtos = produto::all();
         return view('home', compact('produtos'));
     }
@@ -27,10 +28,14 @@ class ProdutoController extends Controller
 
     public function allProducts()
     {
-        $produtos = produto::all();
-        return view('allProducts')->with('\Jogos' , produto::all());
-    }
 
+        $imagens = imagem::all();
+        $produtos = produto::all();
+        return view('allProducts', compact('produtos'));
+    
+    }
+    
+    
     public function login()
     {
         return view('login')->with('\login' , produto::all());
