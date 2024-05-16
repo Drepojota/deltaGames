@@ -37,25 +37,7 @@
         </button>
       </div>
     </main>
-
-    <article>
     
-      <div class="container" id="container-popGames"> 
-        <h2>Jogos Populares</h2>
-        <div class="row row-cols-1 row-cols-md-4">
-          @foreach($produtos as $produto)
-          <div class="col">
-            <div class="card">
-              <img src="{{ asset($produto->PRODUTO_IMAGEM) }}" class="card-img">
-              <div class="card-body">
-                <h5 class="card-title">{{ $produto->PRODUTO_NOME }}</h5>
-                <p class="card-text">{{ $produto->PRODUTO_DESC }}</p>
-              </div>  
-                @endforeach
-    </div>
-  </div>
-  </article>
-
     <div class="container" id="container-marcasGames"> 
       <h2>Desenvolvedoras</h2>
       <div class="row row-cols-1 row-cols-md-4">
@@ -80,8 +62,31 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <article>
+    
+      <div class="container" id="container-popGames"> 
+        <h2>Jogos Populares</h2>
+        <div class="row row-cols-1 row-cols-md-4">
+          @foreach($produtos as $produto)
+          <div class="col">
+            <div class="card">
+              <img src="{{ asset($produto->PRODUTO_IMAGEM) }}" class="card-img">
+              <div class="card-body">
+                <h5 class="card-title">{{ $produto->PRODUTO_NOME }}</h5>
+                <p> class="card-text">{{ $produto->PRODUTO_DESC }}</p>
+              </div>  
+               
+            </div>
+           </div>
+        </div>
+      </div>     
+  </article>
+
+    
   
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    @endforeach
     @endsection

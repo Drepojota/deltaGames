@@ -97,7 +97,7 @@ hgroup,
 menu,
 nav,
 section {
-
+	display: block;
 }
 
 body {
