@@ -13,19 +13,15 @@
 
     <section class="container">
         
+        @foreach ($PRODUTO as $produto)
         <div style="flex: 1 1 300px; margin-bottom: 30px;">
             <img src="image/pagRiot/lol.jpg" class="cards" alt="">
             <link rel="stylesheet" href="">
         </div>
         <div class="desc" style="flex: 1 1 300px; margin-bottom: 30px;">
             <p class="text" style="margin: 60px;">
-                <h2 style="text-align: center;">League Of Legends</h2>
-                <p class="text">"League of Legends" é um popular jogo eletrônico de estratégia em tempo real (MOBA)
-                    desenvolvido pela Riot Games. Ambientado em Runeterra, os jogadores controlam campeões com
-                    habilidades únicas, lutando para destruir a base inimiga enquanto defendem a própria. Com uma
-                    grande variedade de campeões e modos de jogo, é um fenômeno cultural que sim continua a influenciar
-                    o esports e atrair jogadores de todo o mundo para se divertir.
-                </p>
+                <h2 style="text-align: center;">{{ $PRODUTO ->PRODUTO_NOME }}</h2>
+                <p class="text">{{ $PRODUTO ->$PRODUTO_DESC }}</p>
         </div>
         
         <div style="flex: 1 1 300px; margin-bottom: 30px;">
