@@ -42,5 +42,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+//filtro
+function ordenarJogos(tipoOrdenacao, nomeFiltro) {
+    // Atualiza o texto do botão do dropdown com o nome do filtro selecionado
+    document.getElementById('meuDropdown').innerText = nomeFiltro;
 
+    // Obtém os jogos
+    var jogos = $(".jogo");
+
+    // Ordena os jogos de acordo com o tipo de ordenação selecionado
+    if (tipoOrdenacao === 'AZ') {
+        jogos.sort(function(a, b) {
+            return $(a).find(".card-title").text().localeCompare($(b).find(".card-title").text());
+        });
+    } else if (tipoOrdenacao === 'ZA') {
+        jogos.sort(function(a, b) {
+            return $(b).find(".card-title").text().localeCompare($(a).find(".card-title").text());
+        });
+    } else if (tipoOrdenacao === 'menorPreco') {
+        jogos.sort(function(a, b) {
+            var precoA = parseFloat($(a).find(".card-text-price").text().replace('$', '').trim());
+            var precoB = parseFloat($(b).find(".card-text-price").text().replace('$', '').trim());
+            return precoA - precoB;
+        });
+    } else if (tipoOrdenacao === 'maiorPreco') {
+        jogos.sort(function(a, b) {
+            var precoA = parseFloat($(a).find(".card-text-price").text().replace('$', '').trim());
+            var precoB = parseFloat($(b).find(".card-text-price").text().replace('$', '').trim());
+            return precoB - precoA;
+        });
+    }
+
+    // Atualiza a lista de jogos
+    $("#jogosContainer").html(jogos);
+}
 

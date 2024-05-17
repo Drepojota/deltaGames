@@ -6,7 +6,6 @@ nav.nav-menu {
     position: fixed;
     top: 0;
     left: 0;
-
     transition: .4s;
     z-index: 9999;
 }
@@ -15,15 +14,10 @@ nav.nav-menu.expandir {
     width: 300px;
     transition: 1s;
     color: white;
-    ul li.item-menu a .icon i{
+    ul li.item-menu a .icon i {
         transition: .4s;
         margin-left: 0px;
     }
-}
-
-ul li.item-menu a .icon i{
-    margin-right: 15px;
-    left: 0;
 }
 
 ul {
@@ -37,7 +31,7 @@ ul li.item-menu {
     border-radius: 3px;
 }
 
-ul li.ativo{
+ul li.ativo {
     background-color: #002b4b;
 }
 
@@ -65,40 +59,52 @@ ul li.item-menu a {
 ul li.item-menu a .txt-link {
     margin-left: 70px;
     transition: .6s;
-    opacity: 0;
+    visibility: hidden;
 }
 
 nav.nav-menu.expandir .txt-link {
     margin-left: 20px;
-    opacity: 1;
+    visibility: visible;
 }
 
-ul li.item-menu a .icon i{
+ul li.item-menu a .icon i {
     font-size: 24px;
 }
 
+
 /* ------Footer------*/
 
-footer.footer-main {
-    background-color: #202020;
-    color: white;
-    height: 80px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    margin-left: 0px;
+.main-content {
+    flex: 1;
+    padding-bottom: 25px;
+    background-color: #2c2c2c;
 }
 
-footer div.rodape-footer {
+.footer-main {
+    background-color: #202020;
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 100%;
+    margin-top: auto;
 }
 
-footer.rodape-footer div.txt-footer {
+.rodape-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.txt-footer {
     text-align: center;
-    padding-top: 35px;
+}
+
+.txt-footer span {
+    margin: 0 10px;
 }
 
 @media only screen and (max-width: 767px) {
