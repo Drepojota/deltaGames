@@ -44,13 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //filtro
 function ordenarJogos(tipoOrdenacao, nomeFiltro) {
-    // Atualiza o texto do botão do dropdown com o nome do filtro selecionado
     document.getElementById('meuDropdown').innerText = nomeFiltro;
-
-    // Obtém os jogos
     var jogos = $(".jogo");
-
-    // Ordena os jogos de acordo com o tipo de ordenação selecionado
     if (tipoOrdenacao === 'AZ') {
         jogos.sort(function(a, b) {
             return $(a).find(".card-title").text().localeCompare($(b).find(".card-title").text());
@@ -72,7 +67,5 @@ function ordenarJogos(tipoOrdenacao, nomeFiltro) {
             return precoB - precoA;
         });
     }
-
-    // Atualiza a lista de jogos
     $("#jogosContainer").html(jogos);
 }
