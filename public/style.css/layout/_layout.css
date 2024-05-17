@@ -29,6 +29,7 @@ ul {
 ul li.item-menu {
     transition: .4s;
     border-radius: 3px;
+    align-items: center;
 }
 
 ul li.ativo {
@@ -36,7 +37,8 @@ ul li.ativo {
 }
 
 ul li.item-user {
-    position: absolute;
+    position: relative;
+    margin-top: 580px;
     bottom: 0;
     width: 100%;
     text-align: center;
@@ -54,16 +56,17 @@ ul li.item-menu a {
     display: flex;
     line-height: 40px;
     text-align: center;
+    align-items: center;
 }
 
 ul li.item-menu a .txt-link {
     margin-left: 70px;
-    transition: .6s;
     visibility: hidden;
 }
 
 nav.nav-menu.expandir .txt-link {
     margin-left: 20px;
+    transition: .6s;
     visibility: visible;
 }
 

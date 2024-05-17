@@ -43,7 +43,7 @@
                 @endif
                 <div class="card-body">
                     <h5 class="card-title">{{ $produto->PRODUTO_NOME }}</h5>
-                    <p class="card-text-price">{{ $produto->PRODUTO_PRECO }}</p>
+                    <p class="card-text-price">R$ {{ $produto->PRODUTO_PRECO }}</p>
                 </div>
             </div>
         </div>
