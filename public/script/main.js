@@ -61,14 +61,14 @@ function ordenarJogos(tipoOrdenacao, nomeFiltro) {
         });
     } else if (tipoOrdenacao === 'menorPreco') {
         jogos.sort(function(a, b) {
-            var precoA = parseFloat($(a).find(".card-text-price").text().replace('$', '').trim());
-            var precoB = parseFloat($(b).find(".card-text-price").text().replace('$', '').trim());
+            var precoA = parseFloat($(a).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
+            var precoB = parseFloat($(b).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
             return precoA - precoB;
         });
     } else if (tipoOrdenacao === 'maiorPreco') {
         jogos.sort(function(a, b) {
-            var precoA = parseFloat($(a).find(".card-text-price").text().replace('$', '').trim());
-            var precoB = parseFloat($(b).find(".card-text-price").text().replace('$', '').trim());
+            var precoA = parseFloat($(a).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
+            var precoB = parseFloat($(b).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
             return precoB - precoA;
         });
     }
@@ -76,4 +76,3 @@ function ordenarJogos(tipoOrdenacao, nomeFiltro) {
     // Atualiza a lista de jogos
     $("#jogosContainer").html(jogos);
 }
-
