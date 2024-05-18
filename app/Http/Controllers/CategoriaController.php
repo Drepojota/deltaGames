@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use App\Models\Produto;
 
 class CategoriaController extends Controller
 {
-    public function indexCat()
+    public function indexCat(Categoria $categoria)
     {
-        return view('categoria.indexCat')->with('categorias', Categoria::all());
+        return view('productsCat')->with('categoria', $categoria);
+    }
+
+    public function filtroCat(Categoria $categoria)
+    {
+        return view('home')->with('categoria', $categoria);
     }
 
     public function editCat(Categoria $categoria)

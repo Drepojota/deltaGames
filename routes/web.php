@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CategoriaController;
+use App\Models\Categoria;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,4 +29,5 @@ Route::get('/dev', [ProdutoController::class, 'dev']);
 Route::get('/ApresProduto', [ProdutoController::class, 'pagProduto']);
 Route::get('/jogos', [ProdutoController::class, 'allProducts']);
 Route::get('/login', [ ClientController::class, 'login']); 
-Route::get('/cadastro', [ ClientController::class, 'cadastro']); 
+Route::get('/cadastro', [ ClientController::class, 'cadastro']);
+Route::get('/jogos/{categoria}', [CategoriaController::class, 'indexCat']);

@@ -17,15 +17,14 @@
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #333232;">
             @foreach(\App\Models\Categoria::all() as $cat)
-                <li><a class="dropdown-item" href="/jogos/{{$cat->CATEGORIA_ID}}">{{$cat->CATEGORIA_NOME}}</a></li>
+                <li><a class="dropdown-item" href="{{$cat->CATEGORIA_ID}}">{{$cat->CATEGORIA_NOME}}</a></li>
             @endforeach
           </ul>
         </div>
     </div>
-    </div>
     <div class="customDrop container">
       <div class="txt-info">
-        <p>Mostrando <span id="totalJogos">{{ count($produtos) }}</span> jogos</p>
+        <p>Mostrando jogos</p>
       </div>
       <div class="orderConfig">
         <div class="txt-order">
@@ -47,7 +46,7 @@
 
     <div class="container">
     <div class="row" id="jogosContainer">
-        @foreach ($produtos as $produto)
+        @foreach ($categoria->Produto as $produto)
         <div class="col-md-2 jogo">
             <div class="card">
                 @if ($produto->IMAGEM->count() > 0)
@@ -71,7 +70,7 @@
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <!-- Bootstrap JS -->
+
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </div>
 
