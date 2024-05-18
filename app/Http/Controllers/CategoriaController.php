@@ -13,6 +13,11 @@ class CategoriaController extends Controller
         return view('productsCat')->with('categoria', $categoria);
     }
 
+    public function filtroCat(Categoria $categoria)
+    {
+        return view('home')->with('categoria', $categoria);
+    }
+
     public function editCat(Categoria $categoria)
     {
         return view('categoria.editCat')->with('categoria', $categoria);

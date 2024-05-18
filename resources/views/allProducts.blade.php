@@ -11,7 +11,17 @@
 <div class="body">
   <article>
     <div class="container">
-      <h1 class="page-title">Todos os Jogos</h1>
+    <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="meuDropdown" aria-expanded="false" data-toggle="dropdown" aria-haspopup="true">
+            categoria
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #333232;">
+            @foreach(\App\Models\Categoria::all() as $cat)
+                <li><a class="dropdown-item" href="/jogos/{{$cat->CATEGORIA_ID}}">{{$cat->CATEGORIA_NOME}}</a></li>
+            @endforeach
+          </ul>
+        </div>
+    </div>
     </div>
     <div class="customDrop container">
       <div class="txt-info">

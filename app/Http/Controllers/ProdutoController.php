@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Imagem;
+use App\Models\Categoria;
 
 
 
@@ -13,7 +14,7 @@ class ProdutoController extends Controller
     {
         $imagens = imagem::all();
         $produtos = produto::all();
-        return view('home', compact('produtos'));
+        return view('home', compact('produtos'));   
     }
 
     public function dev()
