@@ -85,6 +85,10 @@ h5.card-title {
     margin-bottom: 3px;
 }
 
+.card-link {
+    text-decoration: none;
+}
+
 .card-text-price {
     color: #999;
 }

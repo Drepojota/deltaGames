@@ -25,18 +25,14 @@
         <div class="banner-history">
         <img class="bannerGame" src="image/ValorantPage/bannerValorant.jpg">
         <p class="valorantHistory">
-            <strong>"Valorant",  é um jogo de tiro tático que combina elementos de estratégia em equipe e 
-                     habilidades únicas de agentes. Ambientado em um futuro distópico, os jogadores se dividem em duas 
-                     equipes, cada uma com o objetivo de plantar ou desarmar uma bomba em locais estratégicos do mapa.
-                     Com mecânicas de tiro precisas e habilidades especiais dos agentes, o jogo oferece uma grande experiência 
-                     envolvente e competitiva.</strong>
+            <strong></strong>
          </p>
         </div>
         
     </container>   
     <div class ="barra-compra"> 
       <p class="descriptionValue">
-        Gratuito
+        
       </p> 
       <button class="BtnCompra">Jogar</button>
         </div>

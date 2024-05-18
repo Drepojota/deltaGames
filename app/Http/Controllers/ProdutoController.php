@@ -33,6 +33,17 @@ class ProdutoController extends Controller
         $produtos = produto::all();
         return view('allProducts', compact('produtos'));
     }
+    public function indexProduto(Produto $produto)
+    {
+        // Assumindo que há uma relação 'imagens' definida no modelo Produto
+        $imagens = $produto->imagens; // Recupere as imagens relacionadas ao produto específico
+    
+        // Passe o produto e suas imagens para a view
+        return view('ApresProduto')->with([
+            'produto' => $produto,
+            'imagens' => $imagens
+        ]);
+    }
     
     
     public function login()

@@ -26,7 +26,7 @@ require __DIR__.'/auth.php';
 Route::get('/home', [ProdutoController::class, 'home']);
 Route::get('/cart', [ProdutoController::class, 'cart']);
 Route::get('/dev', [ProdutoController::class, 'dev']);
-Route::get('/ApresProduto', [ProdutoController::class, 'pagProduto']);
+Route::get('/jogo/{produto}', [ProdutoController::class, 'indexProduto']);
 Route::get('/jogos', [ProdutoController::class, 'allProducts']);
 Route::get('/login', [ ClientController::class, 'login']); 
 Route::get('/cadastro', [ ClientController::class, 'cadastro']);
