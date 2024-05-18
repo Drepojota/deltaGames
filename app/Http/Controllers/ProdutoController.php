@@ -45,5 +45,4 @@ class ProdutoController extends Controller
     {
         return view('ApresProduto')->with('\pagProduto' , Produto::all());
     }
-    
 }

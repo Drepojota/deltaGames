@@ -10,7 +10,9 @@
 
 <div class="body">
   <article>
-    <h1 class="page-title">Todos os Jogos</h1>
+    <div class="container">
+      <h1 class="page-title">Todos os Jogos</h1>
+    </div>
     <div class="customDrop container">
       <div class="txt-info">
         <p>Mostrando <span id="totalJogos">{{ count($produtos) }}</span> jogos</p>
