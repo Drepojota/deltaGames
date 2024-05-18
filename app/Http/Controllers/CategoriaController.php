@@ -10,7 +10,8 @@ class CategoriaController extends Controller
 {
     public function indexCat(Categoria $categoria)
     {
-        return view('productsCat')->with('categoria', $categoria);
+        $contagemProdutos = $categoria->produtos()->count();
+        return view('productsCat', compact('categoria', 'contagemProdutos'));
     }
 
     public function filtroCat(Categoria $categoria)

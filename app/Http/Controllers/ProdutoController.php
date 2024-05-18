@@ -29,11 +29,9 @@ class ProdutoController extends Controller
 
     public function allProducts()
     {
-
         $imagens = imagem::all();
         $produtos = produto::all();
         return view('allProducts', compact('produtos'));
-    
     }
     
     

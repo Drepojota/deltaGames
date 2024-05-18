@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //filtro
 function ordenarJogos(tipoOrdenacao, nomeFiltro) {
-    document.getElementById('meuDropdown').innerText = nomeFiltro;
+    document.getElementById('dropdownFiltro').innerText = nomeFiltro;
     var jogos = $(".jogo");
     if (tipoOrdenacao === 'AZ') {
         jogos.sort(function(a, b) {

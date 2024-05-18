@@ -24,6 +24,7 @@ class produto extends Model
     public function Imagem(){
         return $this-> hasMany(Imagem::class, 'PRODUTO_ID','PRODUTO_ID'); //  Isso define uma relação has-many com o modelo, onde a chave estrangeira está na mesa."Imagem" "PRODUTO_ID" "imagem"
     }
+    
 }
 
 //Em resumo, esse modelo representa uma entidade de produto que pertence a uma categoria e a um inventário (estoque) e tem várias imagens associadas a ela.
