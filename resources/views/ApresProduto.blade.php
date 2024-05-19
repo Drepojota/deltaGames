@@ -1,40 +1,38 @@
 {{--Importação de layout--}}
 
 @extends('layouts.main')
-    @section('title', 'Produtos')
-    
-    
-    @section('content')
+@section('title', 'Produtos')
 
-    {{--Conteúdo abaixo--}}
 
-    <section>
-        <container class="carousel-valorantPage">
-        <div class="Carousel-valorant">
-            <img id="valorant-imgCompras" src="image/ValorantPage/partida6.jpg" alt="">
-      
-        <div id="compras-carousel"> 
-            <img id="setaEsq-valorantPage" src="image/ValorantPage/setavalorantEsq.png">
-            <img class="carousel-pageCompra" src="image/ValorantPage/partida1.jpg">
-            <img class="carousel-pageCompra" src="image/ValorantPage/partida2.jpg">
-            <img class="carousel-pageCompra" src="image/ValorantPage/partida4.jpg">
-            <img class="carousel-pageCompra" src="image/ValorantPage/partida5.jpg">
-             <img id="setaDir-valorantPage" src="image/ValorantPage/setaValorant.png">
+@section('content')
+
+{{--Conteúdo abaixo--}}
+<section class="section-apres">
+    <div class="container container-apres">
+        <div class="bloco1-apres">
+            <div class="txt-apres">
+                <h1>{{$produto->PRODUTO_NOME}}</h1>
+                <p>{{$produto->PRODUTO_DESC}}</p>
+                <p>{{ $produto->categoria->CATEGORIA_NOME}}</p>
+            </div>
+            <div class="container-compra-apres">
+                <div class="compra-apres">
+                    <div class="txt-tituloCompra">
+                        <h5>{{$produto->PRODUTO_NOME}}</h5>
+                    </div>
+                    <div class="txtCompra-apres">
+                        <button>Adquirir</button>
+                        <div class="p-apres">
+                            <p>{{$produto->PRODUTO_PRECO}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="bloco2-apres">
+            <p>fefefefe</p>
         </div>
-        <div class="banner-history">
-        <img class="bannerGame" src="image/ValorantPage/bannerValorant.jpg">
-        <p class="valorantHistory">
-            <strong></strong>
-         </p>
-        </div>
-        
-    </container>   
-    <div class ="barra-compra"> 
-      <p class="descriptionValue">
-        
-      </p> 
-      <button class="BtnCompra">Jogar</button>
-        </div>
-    </section>
-  @endsection
+    </div>
+</section>
+
+@endsection
