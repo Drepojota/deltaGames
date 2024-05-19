@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CategoriaController;
-use App\Models\Categoria;
 
 Route::get('/', function () {
     return view('welcome');
