@@ -35,18 +35,10 @@ class ProdutoController extends Controller
     }
     public function indexProduto(Produto $produto)
     {
-<<<<<<< HEAD
         $produto->load('categoria');
         $imagens = $produto->imagens;
         
         return view('ApresProduto')->with([
-=======
-        // Assumindo que há uma relação 'imagens' definida no modelo Produto
-        $imagens = $produto->imagens; // Recupere as imagens relacionadas ao produto específico
-    
-        // Passe o produto e suas imagens para a view
-        return view('indexProduto')->with([
->>>>>>> 837af1f0631ba4464c059ea84d8edb6f7053ab8c
             'produto' => $produto,
             'imagens' => $imagens
         ]);
