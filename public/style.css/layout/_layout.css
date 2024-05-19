@@ -7,7 +7,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    margin-left: 80px; /* Offset the left margin by the width of the nav menu */
+    margin-left: 80px; 
     background-color: #2c2c2c;
 }
 

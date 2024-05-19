@@ -39,7 +39,7 @@ class ProdutoController extends Controller
         $imagens = $produto->imagens; // Recupere as imagens relacionadas ao produto específico
     
         // Passe o produto e suas imagens para a view
-        return view('ApresProduto')->with([
+        return view('indexProduto')->with([
             'produto' => $produto,
             'imagens' => $imagens
         ]);
