@@ -62,7 +62,7 @@ ul li.ativo {
 }
 
 ul li.item-user {
-    margin-top: auto; /* Empurra o item do usuário para a parte inferior */
+    margin-top: auto;
     text-align: center;
 }
 
