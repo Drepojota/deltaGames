@@ -30,9 +30,17 @@
             </div>
         </div>
         <div class="bloco2-apres">
-            <p>fefefefe</p>
+            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-apres" data-bs-ride="carousel">
+                <div class="carousel-inner inner-apres">
+                    @foreach ($produto->Imagem as $index => $imagem)
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }} carouselItem-apres">
+                        <img src="{{ $imagem->IMAGEM_URL }}" class="d-block w-100" alt="...">
+                    </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
-    </div>
+
 </section>
 
 @endsection

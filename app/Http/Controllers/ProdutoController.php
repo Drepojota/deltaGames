@@ -35,16 +35,10 @@ class ProdutoController extends Controller
     }
     public function indexProduto(Produto $produto)
     {
-        $produto->load('categoria');
-        $imagens = $produto->imagens;
+        $produto->load('categoria', 'Imagem'); // Carrega a relação 'Imagem'
         
-        return view('ApresProduto')->with([
-            'produto' => $produto,
-            'imagens' => $imagens
-        ]);
+        return view('ApresProduto')->with('produto', $produto);
     }
-    
-    
     
     public function login()
     {

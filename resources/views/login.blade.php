@@ -4,7 +4,6 @@
     
     @section('content')
     
-<body>
     <section class="area-login">
         <div class="login">
                 <div>
@@ -19,6 +18,3 @@
                 <p>Ainda nao tem uma conta?<a href="#">Criar Conta</a></p>
         </div>
     </section>
-</body>
-
-</html>
