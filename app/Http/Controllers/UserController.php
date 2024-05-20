@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\User; // Importe o modelo de usuário
 
 class UserController extends Controller
 {
     public function index()
     {
-        return view('logar'); // Certifique-se de que o arquivo de visão é 'logar.blade.php'
+        return view('logar'); 
     }
 
     public function login(Request $request)
@@ -25,7 +25,7 @@ class UserController extends Controller
             'password' => $request->USUARIO_SENHA,
         ];
 
-        dd($credentials); // Verifique as credenciais aqui
+        dd($credentials);
 
         if (Auth::attempt($credentials)) {
             return redirect()->intended('dashboard');

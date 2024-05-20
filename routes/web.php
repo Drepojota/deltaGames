@@ -6,6 +6,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoriaController;
 
+
 Route::get('/', function () {
     return view('logar');
 });
@@ -36,4 +37,4 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/logar', [ UserController::class, 'index'])->name('home.login'); 
 Route::post('/login', [UserController::class,'login'])->name('login');
 
-Route::get('/cadastro', [ UserController::class, 'cadastro'])->name('cadastro');
+Route::get('/cadastro', [ UserController::class, 'cadastro'])->name('cadastro.store');
