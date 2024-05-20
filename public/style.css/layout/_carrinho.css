@@ -34,7 +34,7 @@ main > button {
 }
 
 thead {
-    background-color: green;
+    background-color: #002a4bc9;
     height: 45px;
 }
 
@@ -143,17 +143,17 @@ aside .box {
 }
 
 aside button {
-    color: wheat;
+    color: black;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background: green;
+    background: white;
     width: 300px;
     height: 50px;
     border-radius: 8px;
 }
 
 aside .button {
-    background-color: #555252;
+    background-color: #002a4bc9;
     justify-content: space-around;
     text-align: center;
     width: 350px;
@@ -168,11 +168,12 @@ aside button img {
     height: 35px;
     width: auto;
     padding-right: 10px;
+
 }
 
 aside .box header {
     padding: 8px;
-    background-color: #555252;
+    background-color: #002a4bc9;
     border-bottom: white 3px solid;
     color: white;
     font-size: 18px;
@@ -180,22 +181,24 @@ aside .box header {
 
 aside .box .info {
     padding: 20px;
-    background-color: #555252;
+    background-color: #002a4bc9;
     text-align: center;
 }
 
 aside .box .total{
-    border-top: 50px #555252 solid;
-    padding: 20px;
-    background-color: #c4bbb4;
+    text-align: center;    
+    border-top: 50px white solid;
+    background-color: white;
     font-size: 24px;
     color: black;
-    display: flex;
-    justify-content: space-between;
+    padding-bottom: 25px;
+    
+    
+    
 }
 
 .sub {
-    color: green;
+    color: white;
     font-size: 18px;
 }
 

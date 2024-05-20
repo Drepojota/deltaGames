@@ -6,7 +6,7 @@
     @section('content')
 
     <main>
-        <div class="page-title">Suas compras</div>
+        <div class="page-title">Carrinho de compras</div>
         <div class="content">
             <section>
                 <table>
@@ -48,14 +48,14 @@
             <aside>
                 <div class="box">
                     <header>Resumo</header>
-                    <div class="total"><span>Total</span>R$ 700,00</div>
+                    <div class="total"><span>Total</span><br>R$ 700,00</div>
                     <div class="info">
                         <div class="sub"><span>Á Vista</span></div>
                         <div class="sub"><span>R$ 650,00</span></div>
                         <div class="pag"><span>No Pix</span></div>
                     </div>
                     <div class="button">
-                        <button><img src="image/nav/carrinho.png">Finalizar Pedido</button>
+                        <button><img src="image/carrinho/carrinho2.png">Finalizar Pedido</button>
                     </div>
                 </div>
             </aside>
