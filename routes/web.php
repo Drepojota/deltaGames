@@ -3,11 +3,11 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
-use App\Http\Controllers\ClientController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoriaController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('logar');
 });
 
 Route::get('/dashboard', function () {
@@ -27,6 +27,13 @@ Route::get('/cart/{produto}', [ProdutoController::class, 'cart']);
 Route::get('/dev', [ProdutoController::class, 'dev']);
 Route::get('/jogo/{produto}', [ProdutoController::class, 'indexProduto']);
 Route::get('/jogos', [ProdutoController::class, 'allProducts']);
-Route::get('/login', [ ClientController::class, 'login']); 
-Route::get('/cadastro', [ ClientController::class, 'cadastro']);
 Route::get('/jogos/{categoria}', [CategoriaController::class, 'indexCat']);
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [ProdutoController::class, 'home'])->name('home');});
+
+Route::get('/logar', [ UserController::class, 'index'])->name('home.login'); 
+Route::post('/login', [UserController::class,'login'])->name('login');
+
+Route::get('/cadastro', [ UserController::class, 'cadastro'])->name('cadastro');

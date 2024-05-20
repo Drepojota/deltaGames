@@ -5,7 +5,7 @@
     @section('content')
     
 
-<body>
+
     <section class="area-cadastro">
         <div class="login">
                 <div>
@@ -24,8 +24,6 @@
                 <p>Já tem uma conta?<a href="#">Entrar</a></p>
         </div>
     </section>
-</body>
 
-</html>
 
 @endsection
