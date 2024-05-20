@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Imagem;
-use App\Models\Categoria;
+
 
 
 
@@ -22,9 +22,10 @@ class ProdutoController extends Controller
         return view('dev')->with('\dev' , produto::all());
     }
 
-    public function cart()
+    public function cart(Produto $produto)
     {
-        return view('cart')->with('\cart' , produto::all());
+        $produto->load('categoria', 'Imagem');
+        return view('cart')->with('produto', $produto);
     }
 
     public function allProducts()
