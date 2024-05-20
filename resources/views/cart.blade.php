@@ -6,7 +6,7 @@
     @section('content')
 
     <main>
-        <div class="page-title">Seu Carrinho</div>
+        <div class="page-title">Suas compras</div>
         <div class="content">
             <section>
                 <table>
