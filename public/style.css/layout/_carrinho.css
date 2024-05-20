@@ -140,6 +140,7 @@ aside .box {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     margin-right: 100px;
+
 }
 
 aside button {
@@ -181,7 +182,7 @@ aside .box header {
 
 aside .box .info {
     padding: 20px;
-    background-color: #002a4bc9;
+    background-color: #8094a4;
     text-align: center;
 }
 

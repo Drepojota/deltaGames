@@ -20,42 +20,42 @@
                         </tr>
                     </thead>
                     <tbody>
+                        foreach
                         <tr>
                             <td>
                                 <div class="produto">
-                                    <img src="image/carrinho/valorant-riot-games.webp" alt="">
+                                    <img src="{{$produto->IMAGEM[0]->IMAGEM_URL}}" alt="">
                                     <div class="info">
-                                        <div class="name">Nome</div>
-                                        <div class="desc">Desc</div>
+                                        <div class="name">{{$produto->PRODUTO_NOME}}</div>
                                     </div>
                                 </div>
                             </td>
-                            <td>R$ 350,00</td>
+                            <td>R$ {{$produto->PRODUTO_PRECO}}</td>
                             <td>
                                 <div class="qtd">
-                                    <button><i class='bx bx-minus' ></i></button>
-                                    <span>2</span>
-                                    <button><i class='bx bx-plus' ></i></button>
+                                    <span>1</span>
                                 </div>
                             </td>
-                            <td>R$ 700,00</td>
+                            <td>R$ {{$produto->PRODUTO_PRECO}}</td>
                             <td>
                                 <button class="delete"><i class='bx bx-x'></i></button>
                             </td>
+                        </tr>
+                        endforeach
                     </tbody>
                 </table>
             </section>
             <aside>
                 <div class="box">
                     <header>Resumo</header>
-                    <div class="total"><span>Total</span><br>R$ 700,00</div>
+                    <div class="total"><span>Total</span><br>R$ {{$produto->PRODUTO_PRECO}}</div>
                     <div class="info">
                         <div class="sub"><span>Á Vista</span></div>
-                        <div class="sub"><span>R$ 650,00</span></div>
+                        <div class="sub"><span>R${{$produto->PRODUTO_PRECO}}</span></div>
                         <div class="pag"><span>No Pix</span></div>
                     </div>
                     <div class="button">
-                        <button><img src="image/carrinho/carrinho2.png">Finalizar Pedido</button>
+                        <button><img src="/image/carrinho/carrinho2.png">Finalizar Pedido</button>
                     </div>
                 </div>
             </aside>

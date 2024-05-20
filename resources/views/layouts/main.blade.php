@@ -10,10 +10,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="image/favicon_io/favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="image/favicon_io/favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/image/favicon_io/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/image/favicon_io/favicon-64x64.png">
     <link rel="icon" type="image/svg+xml" href="image/favicon_io/favicon.svg">
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="image/favicon_io/apple-touch-icon.png">
