@@ -36,7 +36,7 @@ class ProdutoController extends Controller
     }
     public function indexProduto(Produto $produto)
     {
-        $produto->load('categoria', 'Imagem'); // Carrega a relação 'Imagem'
+        $produto->load('categoria', 'Imagem');
         
         return view('ApresProduto')->with('produto', $produto);
     }

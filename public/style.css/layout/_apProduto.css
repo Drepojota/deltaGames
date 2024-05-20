@@ -33,7 +33,7 @@
 .bloco2-apres {
     width: 60%;
     height: 550px;
-    background-color: #002a4bc9;
+    background-color: #002a4bbb;
     border-bottom: 1px solid #ffffff;
     border-right: 1px solid #ffffff;
     border-top: 1px solid #ffffff;
@@ -41,6 +41,8 @@
     display: flex;
     padding-right: 20px;
     padding-left: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .txt-apres {
@@ -50,25 +52,45 @@
     text-align: justify;
 }
 
+.txt-apres h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.cat-desc {
+    color: #bbb;
+    font-size: 18px;
+}
+
+.txt-tituloCompra {
+    margin-top: 10px;
+    color: #fff;
+}
+
+.p-apres p{
+    color: #fff;
+}
+
 .container-compra-apres {
     display: flex;
     justify-content: center;
 }
 
 .compra-apres {
-    background-color: aqua;
+    background-color: #ffffff7a;
     width: 90%;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left: 30px;
+    border: .5px solid #fff;
 }
 
 .txtCompra-apres {
-    background-color: blueviolet;
+    background-color: #002a4b;
     height: 60px;
-    width: 45%;
+    width: 55%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -77,8 +99,18 @@
 }
 
 .txtCompra-apres button {
-    width: 90px;
+    width: 120px;
     height: 40px;
+    border: .5px solid #fff;
+    transition: .4s;
+    background-color: #ffffff7a;
+    color: #fff;
+    border-radius: 0px;
+}
+
+.txtCompra-apres button:hover {
+    background-color: #6b6a6a94;
+    color: #fff;
 }
 
 .txtCompra-apres p {
