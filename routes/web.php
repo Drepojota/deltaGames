@@ -6,6 +6,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RegisterController;
 
 
 Route::get('/dashboard', function () {
@@ -33,5 +34,8 @@ Route::get('/', [HomeController::class, 'index'])->name('homee');
 Route::controller(LoginController::class)->group(function (){
     Route::get('/login','index')->name('login.index');
     Route::post('/login','store')->name('login.store');
-    Route::get('/logout','destoy')->name('login.destroy');
+    Route::get('/logout','destroy')->name('login.destroy');
 });
+
+Route::get('/cadastro', [RegisterController::class, 'showRegistrationForm'])->name('register.show');
+Route::post('/cadastro', [RegisterController::class, 'register'])->name('register.store');

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('USUARIO_NOME');
             $table->string('USUARIO_EMAIL')->unique();
             $table->string('USUARIO_SENHA');
+            $table->string('USUARIO_CPF')->nullable(); // Torna o campo USUARIO_CPF opcional
             $table->timestamps();
         });
 
@@ -27,9 +28,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('USUARIO');

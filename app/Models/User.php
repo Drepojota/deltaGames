@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 class User extends Authenticatable
 {
@@ -14,7 +13,8 @@ class User extends Authenticatable
 
     protected $fillable = [
         'USUARIO_NOME', 
-        'USUARIO_EMAIL', 
+        'USUARIO_EMAIL',
+        'USUARIO_CPF', 
         'USUARIO_SENHA',
     ];
 
@@ -23,4 +23,9 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    public $timestamps = false; // Desativa os timestamps
 }
