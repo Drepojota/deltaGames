@@ -5,7 +5,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    protected $table = 'usuario'; // Defina explicitamente o nome da tabela
+    protected $table = 'USUARIO'; // Defina explicitamente o nome da tabela
 
     protected $fillable = [
         'USUARIO_EMAIL',
