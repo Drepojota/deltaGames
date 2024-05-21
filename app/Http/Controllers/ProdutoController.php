@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Imagem;
-
+use App\Models\Categoria;
 
 
 
@@ -12,9 +12,11 @@ class ProdutoController extends Controller
 {
     public function home()
     {
-        $imagens = imagem::all();
-        $produtos = produto::all();
-        return view('home', compact('produtos'));   
+        $imagens = Imagem::all();
+        $produtos = Produto::all();
+        $categorias = Categoria::all();
+        $filtroCategorias = $categorias->random(12);
+        return view('home', compact('produtos', 'filtroCategorias'));
     }
 
     public function dev()

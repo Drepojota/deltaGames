@@ -69,3 +69,8 @@ function ordenarJogos(tipoOrdenacao, nomeFiltro) {
     }
     $("#jogosContainer").html(jogos);
 }
+
+//home
+
+
+  

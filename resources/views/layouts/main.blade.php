@@ -19,6 +19,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="image/favicon_io/apple-touch-icon.png">
     <!-- Android/Chrome Icon -->
     <link rel="icon" sizes="192x192" href="image/favicon_io/android-chrome-192x192.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
 </head>
 
 <body>
@@ -55,18 +59,22 @@
             @yield('content')
         </div>
         <footer class="footer-main">
-                <div class="rodape-footer">
-                    <div class="txt-footer">
-                        <span>&copy; 2024 Delta</span>
-                    </div>
-                    <div class="txt-footer">
-                        <span>Termos de uso</span>
-                        <span>| Política |</span>
-                        <span>Suporte</span>
-                    </div>
+            <div class="rodape-footer">
+                <div class="txt-footer">
+                    <span>&copy; 2024 Delta</span>
                 </div>
+                <div class="txt-footer">
+                    <span>Termos de uso</span>
+                    <span>| Política |</span>
+                    <span>Suporte</span>
+                </div>
+            </div>
         </footer>
     </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="/script/main.js"></script>
 </body>
