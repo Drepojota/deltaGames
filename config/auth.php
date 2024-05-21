@@ -14,6 +14,8 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+            'identifier' => 'USUARIO_EMAIL', // Chave de identificação do usuário
+            'password' => 'USUARIO_SENHA',   // Chave de senha do usuário
         ],
     ],
 

@@ -8,8 +8,10 @@ class User extends Authenticatable
     protected $table = 'USUARIO'; // Defina explicitamente o nome da tabela
 
     protected $fillable = [
+        "USUARIO_ID",
+        "USUARIO_NOME",
         'USUARIO_EMAIL',
-        'USUARIO_SENHA',
+        'USUARIO_SENHA'
 
     ];
 

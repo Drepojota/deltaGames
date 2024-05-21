@@ -7,14 +7,20 @@
     <a href="{{ route('homee') }}">Home</a>
     <h2>Login</h2>
 
-    @if(session()->has('success'))
+    @error('error')
+    <span> {{ $message }}</span>
+        
+    @enderror
+
+    @if(session()->has('success')) 
     {{ session()->get('sucess') }}
     @endif
 
 
     @if (auth()->check())
-    Already logged in
+    Already logged in  {{auth()->user()->USUARIO_NOME}} | <a href="{{ route('entrar.destroy') }}">Logout</a>
         
+
     @else
 
 
@@ -30,12 +36,12 @@
     
             <form action="{{ route('entrar.store') }}" method="POST">
                 @csrf
-                <input type="email" name="USUARIO_EMAIL" value="teste_1@gmail.com" placeholder="Email de usuário:" required autofocus> 
+                <input type="email" name="USUARIO_EMAIL"  placeholder="Email de usuário:" required autofocus> 
                 @error('USUARIO_EMAIL')
                 <span>{{ $message }}</span>
                 @enderror
 
-                <input type="password" name="USUARIO_SENHA" value="Testando" placeholder="Sua senha:" required>
+                <input type="password" name="USUARIO_SENHA"  placeholder="Sua senha:" required>
                 @error('USUARIO_SENHA')
                 <span>{{ $message }}</span>
                 @enderror
