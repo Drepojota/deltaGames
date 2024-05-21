@@ -27,5 +27,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getAuthPassword()
+    {
+        return $this->USUARIO_SENHA;
+    }
+    
+    public function setUSUARIOSenhaAttribute($value)
+    {
+        $this->attributes['USUARIO_SENHA'] = bcrypt($value);
+    }
+
     public $timestamps = false; // Desativa os timestamps
 }

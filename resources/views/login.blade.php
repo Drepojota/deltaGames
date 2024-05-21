@@ -6,16 +6,12 @@
     <h2>Login</h2>
 
     @if(session()->has('success'))
-        {{ session()->get('success') }}
+        <div>{{ session()->get('success') }}</div>
     @endif
 
     @if (auth()->check())
-        <p>Already logged in as {{ auth()->USUARIO()->USUARIO_NOME }} | <a href="{{ route('login.destroy') }}">Logout</a></p>
+        <p>Already logged in as {{ auth()->user()->USUARIO_NOME }} | <a href="{{ route('login.destroy') }}">Logout</a></p>
     @else
-        @error('error')
-            <span>{{ $message }}</span>
-        @enderror
-
         <section class="area-login">
             <div class="login">
                 <div>
