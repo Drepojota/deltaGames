@@ -8,7 +8,7 @@
 
 .container-apres {
     display: flex;
-    padding: 8% 5%;
+    padding: 5% 5%;
     justify-content: space-between;
     width: 100%;
     height: 100%;
@@ -17,7 +17,7 @@
 .bloco1-apres {
     width: 40%;
     background-color: #002a4b;
-    height: 550px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -32,7 +32,7 @@
 
 .bloco2-apres {
     width: 60%;
-    height: 550px;
+    height: 650px;
     background-color: #002a4bbb;
     border-bottom: 1px solid #ffffff;
     border-right: 1px solid #ffffff;
@@ -109,7 +109,7 @@
 }
 
 .txtCompra-apres button:hover {
-    background-color: #6b6a6a94;
+    background-color: #4f5c68;
     color: #fff;
 }
 
