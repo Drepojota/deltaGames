@@ -18,7 +18,7 @@
 
 
     @if (auth()->check())
-    Already logged in  {{auth()->user()->USUARIO_NOME}} | <a href="{{ route('entrar.destroy') }}">Logout</a>
+    Already logged in  {{auth()->user()->USUARIO_NOME}} | <a href="{{ route('login.destroy') }}">Logout</a>
         
 
     @else
@@ -34,14 +34,14 @@
                 <img src="{{ asset('image/nav/logo.png') }}" alt="Logo">
             </div>
     
-            <form action="{{ route('entrar.store') }}" method="POST">
+            <form action="{{ route('login.store') }}" method="POST">
                 @csrf
-                <input type="email" name="USUARIO_EMAIL"  placeholder="Email de usuário:" required autofocus> 
+                <input type="email" name="USUARIO_EMAIL" value="teste_1@gmail.com" placeholder="Email de usuário:" required autofocus> 
                 @error('USUARIO_EMAIL')
                 <span>{{ $message }}</span>
                 @enderror
 
-                <input type="password" name="USUARIO_SENHA"  placeholder="Sua senha:" required>
+                <input type="" name="USUARIO_SENHA" value="Testando" placeholder="Sua senha:" required>
                 @error('USUARIO_SENHA')
                 <span>{{ $message }}</span>
                 @enderror

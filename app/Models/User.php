@@ -16,12 +16,13 @@ class User extends Authenticatable
     ];
 
     protected $hidden = [
-        'USUARIO_SENHA', // hashing de senha
+        'USUARIO_SENHA',// hashing de senha
+        'remember_token'
     ];
 
-    public function setPasswordAttribute($USUARIO_SENHA)
+    public function setPasswordAttribute($password)
     {
-        $this->attributes['USUARIO_SENHA'] = bcrypt($USUARIO_SENHA);
+        $this->attributes['USUARIO_SENHA'] = bcrypt($password);
     }
 
     // Override para username
