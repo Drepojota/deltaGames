@@ -41,7 +41,5 @@ Route::controller(LoginController::class)->group(function (){
 
 
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [ProdutoController::class, 'home'])->name('home');});
 
 

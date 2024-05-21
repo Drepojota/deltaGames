@@ -22,12 +22,7 @@ class LoginController extends Controller
             'USUARIO_SENHA.required' => 'O campo password é obrigatório'
         ]);
     
-        // Mapeie as chaves do array de credenciais para corresponder às expectativas do Laravel
-        $credentials = [
-            'USUARIO_EMAIL' => $request->input('USUARIO_EMAIL'),
-            'USUARIO_SENHA' => $request->input('USUARIO_SENHA')
-        ];
-    
+        $credentials = $request->only('USUARIO_EMAIL', 'USUARIO_SENHA');
         $authenticated = Auth::attempt($credentials);
     
         if (!$authenticated) {
@@ -36,7 +31,6 @@ class LoginController extends Controller
     
         return redirect()->route('entrar.index')->with('success', 'Logado com sucesso');
     }
-
     public function destroy(){
         var_dump('logout');
     }

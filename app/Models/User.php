@@ -17,9 +17,9 @@ class User extends Authenticatable
         'USUARIO_SENHA', // hashing de senha
     ];
 
-    public function setPasswordAttribute($password)
+    public function setPasswordAttribute($USUARIO_SENHA)
     {
-        $this->attributes['USUARIO_SENHA'] = bcrypt($password);
+        $this->attributes['USUARIO_SENHA'] = bcrypt($USUARIO_SENHA);
     }
 
     // Override para username
