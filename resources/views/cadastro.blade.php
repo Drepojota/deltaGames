@@ -15,12 +15,10 @@
                     <span>{{ $message }}</span>
                 @enderror
 
-                <div class="confirm-email">
                     <input type="email" name="USUARIO_EMAIL" placeholder="Email de usuário:" required>
                     @error('USUARIO_EMAIL')
                         <span>{{ $message }}</span>
                     @enderror
-                </div>
 
                 <input type="text" name="USUARIO_CPF" placeholder="CPF:" required>
                 @error('USUARIO_CPF')
@@ -34,7 +32,7 @@
 
                 <input type="password" name="USUARIO_SENHA_confirmation" placeholder="Confirme sua senha:" required>
 
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Cadastrar" >
             </form>
 
             <p>Já tem uma conta? <a href="{{ route('login.index') }}">Entrar</a></p>

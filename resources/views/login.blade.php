@@ -36,7 +36,7 @@
                     <input type="submit" value="Entrar">
                 </form>
 
-                <p>Ainda não tem uma conta? <a href="#">Criar Conta</a></p>
+                <p>Ainda não tem uma conta? <a href="{{ route('register.show') }}">Criar Conta</a></p>
             </div>
         </section>
     @endif
