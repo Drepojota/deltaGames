@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -27,21 +26,16 @@ class LoginController extends Controller
 
         $credentials = $request->only('USUARIO_EMAIL', 'USUARIO_SENHA');
 
-        $USUARIO = User::where('USUARIO_EMAIL', $credentials['USUARIO_EMAIL'])->first();
-
-        if ($USUARIO && $USUARIO->USUARIO_SENHA === $credentials['USUARIO_SENHA']) {
-            Auth::login($USUARIO);
+        if (Auth::attempt(['USUARIO_EMAIL' => $credentials['USUARIO_EMAIL'], 'password' => $credentials['USUARIO_SENHA']])) {
             return redirect()->route('login.index')->with('success', 'Logado com sucesso');
         }
 
-        return redirect()->route('login.index')->withErrors(['error' => 'Email ou senha inválidos']);
+        return back()->withErrors(['USUARIO_EMAIL' => 'Email ou senha inválidos']);
     }
 
-
-    public function destroy(){
+    public function destroy()
+    {
         Auth::logout();
         return redirect()->route('login.index')->with('success', 'Você foi desconectado');
     }
-
 }
-
