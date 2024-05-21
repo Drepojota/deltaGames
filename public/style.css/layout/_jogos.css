@@ -60,7 +60,7 @@ h1.page-title {
 }
 
 .card:hover .card-body {
-    background-color: #272727d7;
+    background-color: #4f5c68;
 }
 
 .card:hover ul.list-group li.list-group-item {
@@ -68,7 +68,7 @@ h1.page-title {
 }
 
 .card-body {
-    background-color: #333232;
+    background-color: #002a4b;
     text-align: start;
     overflow: hidden;
     border-bottom: none;
@@ -156,7 +156,7 @@ ul.list-group li.list-group-item {
 }
 
 .dropdown-filtro button.btn-filtro:hover {
-    background-color: #464545c9;
+    background-color: #4f5c68;
     border: 1px solid #002a4bc9;
     transition: .4s;
 }
@@ -195,9 +195,10 @@ ul.list-group li.list-group-item {
 }
 
 .dropdown-order button.btn-order:hover {
-    background-color: #464545c9;
+    background-color: #4f5c68;
     border: 1px solid #002a4bc9;
     transition: .4s;
+    color: #fff;
 }
 
 .dropdown-menu.menu-order {
