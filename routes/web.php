@@ -7,9 +7,6 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 
-Route::get('/logar', function () {
-    return view('logar');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,12 +31,7 @@ Route::get('/jogos/{categoria}', [CategoriaController::class, 'indexCat']);
 
 Route::get('/', [HomeController::class, 'index'])->name('homee');
 Route::controller(LoginController::class)->group(function (){
-    Route::get('/entrar','index')->name('entrar.index');
-    Route::post('/entrar','store')->name('entrar.store');
-    Route::get('/logout','destoy')->name('entrar.destroy');
+    Route::get('/login','index')->name('login.index');
+    Route::post('/login','store')->name('login.store');
+    Route::get('/logout','destoy')->name('login.destroy');
 });
-
-
-
-
-

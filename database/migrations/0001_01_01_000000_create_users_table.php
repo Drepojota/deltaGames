@@ -15,25 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('USUARIO_NOME');
             $table->string('USUARIO_EMAIL')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('USUARIO_SENHA');
-            $table->rememberToken();
             $table->timestamps();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('USUARIO_EMAIL')->primary();
+            $table->id();
+            $table->string('USUARIO_EMAIL')->index();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
-        });
-
-        Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
-            $table->string('ip_address', 45)->nullable();
-            $table->text('user_agent')->nullable();
-            $table->longText('payload');
-            $table->integer('last_activity')->index();
         });
     }
 
@@ -44,7 +34,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('USUARIO');
         Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
     }
-    
 };
