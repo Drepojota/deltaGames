@@ -16,8 +16,8 @@
     }
 
     .lowhome h2{
-        font-size: 20px;
-        margin-top:50px ;
+        font-size: 18px;
+        margin-top:10px ;
         color: aliceblue;
     }
 
