@@ -50,7 +50,7 @@
                 <li class="item-menu item-user">
                     <a href="/login">
                         <span class="icon"><i class="bi bi-person-circle"></i></span>
-                        <span class="txt-link">User</span>
+                        <span class="txt-link">Login</span>
                     </a>
                 </li>
             </ul>
@@ -61,11 +61,11 @@
         <footer class="footer-main">
             <div class="rodape-footer">
                 <div class="txt-footer">
-                    <span>&copy; 2024 Delta</span>
+                    <span>&copy; Delta 2024</span>
                 </div>
                 <div class="txt-footer">
                     <span>Termos de uso</span>
-                    <span>| Política |</span>
+                    <span>Política</span>
                     <span>Suporte</span>
                 </div>
             </div>

@@ -37,5 +37,10 @@ class User extends Authenticatable
         $this->attributes['USUARIO_SENHA'] = bcrypt($value);
     }
 
-    public $timestamps = false; // Desativa os timestamps
+    public $timestamps = false;
+
+    public function products()
+    {
+        return $this->belongsToMany(Produto::class, 'CARRINHO_ITEM', 'USUARIO_ID', 'PRODUTO_ID');
+    }
 }

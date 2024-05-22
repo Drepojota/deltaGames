@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::get('/home', [ProdutoController::class, 'home']);
 Route::get('/cart/{produto}', [ProdutoController::class, 'cart']);
@@ -31,10 +31,10 @@ Route::get('/jogos/{categoria}', [CategoriaController::class, 'indexCat']);
 
 
 Route::get('/', [HomeController::class, 'index'])->name('homee');
-Route::controller(LoginController::class)->group(function (){
-    Route::get('/login','index')->name('login.index');
-    Route::post('/login','store')->name('login.store');
-    Route::get('/logout','destroy')->name('login.destroy');
+Route::controller(LoginController::class)->group(function () {
+    Route::get('/login', 'index')->name('login.index');
+    Route::post('/login', 'store')->name('login.store');
+    Route::get('/logout', 'destroy')->name('login.destroy');
 });
 
 Route::get('/cadastro', [RegisterController::class, 'showRegistrationForm'])->name('register.show');

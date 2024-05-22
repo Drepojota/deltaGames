@@ -49,8 +49,8 @@
                     @error('USUARIO_SENHA')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
-
-                    <input type="submit" value="Entrar">
+                    
+                        <input type="submit" value="Entrar">
                 </form>
 
                 <p>Ainda não tem uma conta? <a href="{{ route('register.show') }}">Criar Conta</a></p>

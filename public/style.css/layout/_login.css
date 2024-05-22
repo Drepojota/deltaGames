@@ -5,7 +5,7 @@ body{
 
 .area-login{
     display: flex;
-    height: 100vh;
+    height: 800px;
     justify-content: center;
     align-items: center;
 }
@@ -17,7 +17,7 @@ body{
     background-color: #181920;
     border-radius:10px ;
     width: 500px;
-    height: 500px;
+    height: 400px;
     padding: 35px;
 }
 

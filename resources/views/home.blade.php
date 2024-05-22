@@ -19,7 +19,7 @@
     <div class="container containerHome">
       <div id="carouselExampleCaptions" class="carousel slide carouselHome" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          @foreach ($produtos->take(8) as $index => $produto)
+          @foreach ($produtos->take(6) as $index => $produto)
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
           @endforeach
         </div>
@@ -29,7 +29,7 @@
             @if ($produto->IMAGEM->count() > 0)
             @foreach ($produto->IMAGEM as $imagem)
             <a href="/jogo/{{$produto->PRODUTO_ID}}">
-              <img src="{{ $imagem->IMAGEM_URL }}" class="d-block w-100" alt="" style="height: 400px;">
+              <img src="{{ $imagem->IMAGEM_URL }}" class="d-block w-100" alt="" style="height: 600px;">
             </a>
             @break
             @endforeach

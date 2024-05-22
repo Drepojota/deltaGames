@@ -28,4 +28,14 @@ class Produto extends Model
     {
         return $this->hasMany(Imagem::class, 'PRODUTO_ID', 'PRODUTO_ID');
     }
+
+    public function Carrinho()
+    {
+        return $this->belongsToMany(Carrinho::class, 'CARRINHO_ITEM', 'USUARIO_ID', 'PRODUTO_ID');
+    }
+
+    public function User()
+    {
+        return $this->belongsToMany(User::class, 'CARRINHO_ITEM', 'PRODUTO_ID', 'USUARIO_ID');
+    }
 }
