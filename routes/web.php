@@ -22,6 +22,8 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/home', [ProdutoController::class, 'home']);
+Route::get('/search', [ProdutoController::class, 'search'])->name('search');
+
 Route::get('/cart/{produto}', [ProdutoController::class, 'cart']);
 Route::get('/dev', [ProdutoController::class, 'dev']);
 Route::get('/jogo/{produto}', [ProdutoController::class, 'indexProduto']);

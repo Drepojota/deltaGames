@@ -11,10 +11,9 @@
 
     <div class="container container-pesquisa">
       <form class="d-flex pesquisa-home" role="search">
-        <input class="form-control me-2 barraPesquisa" type="search" placeholder="Encontre jogos e muito mais" aria-label="Search">
+        <input id="search" class="form-control me-2 barraPesquisa" type="search" placeholder="Encontre jogos e muito mais" aria-label="Search">
       </form>
     </div>
-
 
     <div class="container containerHome">
       <div id="carouselExampleCaptions" class="carousel slide carouselHome" data-bs-ride="carousel">
@@ -24,11 +23,11 @@
           @endforeach
         </div>
         <div class="carousel-inner innerHome">
-          @foreach ($produtos as $index => $produto)
+          @foreach ($produtos->take(6) as $index => $produto)
           <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
             @if ($produto->IMAGEM->count() > 0)
             @foreach ($produto->IMAGEM as $imagem)
-            <a href="/jogo/{{$produto->PRODUTO_ID}}">
+            <a href="/jogo/{{ $produto->PRODUTO_ID }}">
               <img src="{{ $imagem->IMAGEM_URL }}" class="d-block w-100" alt="" style="height: 600px;">
             </a>
             @break
@@ -50,7 +49,6 @@
         </button>
       </div>
     </div>
-
 
     <div class="container container-btn">
       <button class="btn btn-secondary btn-order">
