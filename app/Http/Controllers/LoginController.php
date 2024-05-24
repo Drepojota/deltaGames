@@ -16,21 +16,28 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'USUARIO_EMAIL' => 'required|email',
+            'identifier' => 'required|string',
             'USUARIO_SENHA' => 'required|string',
         ], [
-            'USUARIO_EMAIL.required' => 'O campo email é obrigatório',
-            'USUARIO_EMAIL.email' => 'Esse campo tem que ter um email válido',
+            'identifier.required' => 'O campo de email ou CPF é obrigatório',
             'USUARIO_SENHA.required' => 'O campo senha é obrigatório',
         ]);
 
-        $credentials = $request->only('USUARIO_EMAIL', 'USUARIO_SENHA');
+        $identifier = $request->input('identifier');
+        $password = $request->input('USUARIO_SENHA');
 
-        if (Auth::attempt(['USUARIO_EMAIL' => $credentials['USUARIO_EMAIL'], 'password' => $credentials['USUARIO_SENHA']])) {
+        // Verifica se é um email ou CPF
+        if (filter_var($identifier, FILTER_VALIDATE_EMAIL)) {
+            $credentials = ['USUARIO_EMAIL' => $identifier, 'password' => $password];
+        } else {
+            $credentials = ['USUARIO_CPF' => $identifier, 'password' => $password];
+        }
+
+        if (Auth::attempt($credentials)) {
             return redirect()->route('login.index')->with('success', 'Logado com sucesso');
         }
 
-        return back()->withErrors(['USUARIO_EMAIL' => 'Email ou senha inválidos']);
+        return back()->withErrors(['identifier' => 'Email/CPF ou senha inválidos']);
     }
 
     public function destroy()
