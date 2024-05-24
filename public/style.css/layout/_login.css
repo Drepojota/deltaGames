@@ -11,6 +11,7 @@ body{
 }
 
 .login {
+    margin-top: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,7 +23,7 @@ body{
     padding: 35px;
 }
 
-label {
+.text-box {
     margin-left: 5px;
     color: rgb(232, 231, 252);
 }
@@ -32,7 +33,7 @@ label {
     font-size: 15px;
 }   
 
-.login form{
+.login .formulario{
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -55,7 +56,7 @@ input::placeholder{
     font-size: 14px;
 }
 
-form [type="submit"]{
+.formulario [type="submit"]{
     display: block;
     background-color: #002b4b;
     font-size: 18px;
@@ -80,11 +81,6 @@ p a{
     display: block;
 }
 
-.lowhome h2{
-    font-size: 18px;
-    margin-top:10px ;
-    color: aliceblue;
-}
 
 .login input[type="submit"] {
     background-color: #002b4b;

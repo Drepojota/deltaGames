@@ -4,9 +4,9 @@ body{
  
 }
 
-.area-cadastro{
+.container-register{
     display: flex;
-    height: 100vh;
+
     justify-content: center;
     align-items: center;
 }
@@ -20,9 +20,25 @@ body{
     width: 500px;
     height: 90%;
     padding: 35px;
+    margin-bottom: 10px;
 }
 
 .login form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+label {
+    margin-left: 5px;
+    color: rgb(232, 231, 252);
+} 
+
+.login .group {
+    margin-bottom: 10px;
+    font-size: 15px;
+}   
+
+.login .form{
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -57,5 +73,18 @@ form [type="submit"]{
 }
 
 p{
-    color:#70747b;
+    color:#ffffff;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
+    display: block;
+}
+.success-message {
+    color: green;
+    font-size: 0.875em;
+    margin-top: 5px;
+    display: block;
 }
