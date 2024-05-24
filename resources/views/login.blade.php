@@ -1,63 +1,44 @@
 @extends('layouts.main')
 @section('title', 'Login')
 
-<style>
-    .error-message {
-        color: red;
-        font-size: 0.875em;
-        margin-top: 5px;
-        display: block;
-    }
-    .success-message {
-        color: green;
-        font-size: 0.875em;
-        margin-top: 5px;
-        display: block;
-    }
-
-    .lowhome h2{
-        font-size: 18px;
-        margin-top:10px ;
-        color: aliceblue;
-    }
-
-</style>
-
 
 @section('content')
     @if (auth()->check())
         <p>Already logged in as {{ auth()->USUARIO()->USUARIO_NOME }} | <a href="{{ route('login.destroy') }}">Logout</a></p>
     @else
-        <section class="area-login">
+        <section class="container">
             <div class="login">
                 @if(session()->has('success'))
                     <div class="success-message">{{ session()->get('success') }}</div>
                 @endif
 
+                <h2 style="font-size: 25px; color:aliceblue">Iniciar sessão no Delta</h2>
                 <div>
                     <img src="{{ asset('image/nav/logo.png') }}" alt="Logo">
                 </div>
 
                 <form action="{{ route('login.store') }}" method="POST">
                     @csrf
-                    <input type="email" name="USUARIO_EMAIL" placeholder="Email de usuário:" required autofocus value="{{ old('USUARIO_EMAIL') }}">
-                    @error('USUARIO_EMAIL')
-                        <span class="error-message">{{ $message }}</span>
-                    @enderror
+                    <div class="form-group">
+                        <label for="email">Digite o seu E-mail:</label>
+                        <input type="email" name="USUARIO_EMAIL"  placeholder="Email de usuário:" required autofocus value="{{ old('USUARIO_EMAIL') }}" style="margin: 3px; height:45px" >
+                        @error('USUARIO_EMAIL')
+                            <span class="error-message">{{ $message }}</span>
+                        @enderror
+                    </div>
 
-                    <input type="password" name="USUARIO_SENHA" placeholder="Sua senha:" required>
-                    @error('USUARIO_SENHA')
-                        <span class="error-message">{{ $message }}</span>
-                    @enderror
+                    <div class="form-group">
+                        <label for="password">Digite sua senha:</label>
+                        <input type="password" name="USUARIO_SENHA" placeholder="Sua senha:" required  style="margin: 3px; height:45px">
+                        @error('USUARIO_SENHA')
+                            <span class="error-message">{{ $message }}</span>
+                        @enderror
+                    </div>
                     
-                        <input type="submit" value="Entrar">
+                        <input type="submit" value="Iniciar sessão">
                 </form>
 
                 <p>Ainda não tem uma conta? <a href="{{ route('register.show') }}">Criar Conta</a></p>
-
-                <div class="lowhome">
-                    <h2>Login <a href="{{ route('homee') }}">Home</a></h2>
-                </div>
             </div>
         </section>
     @endif

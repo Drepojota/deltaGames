@@ -3,23 +3,34 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.area-login{
+.container{
     display: flex;
-    height: 800px;
     justify-content: center;
     align-items: center;
+    margin:30px;
 }
 
-.login{
+.login {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #181920;
-    border-radius:10px ;
-    width: 500px;
-    height: 400px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 400px; 
+    height: 350px;
     padding: 35px;
 }
+
+label {
+    margin-left: 5px;
+    color: rgb(232, 231, 252);
+}
+
+.login .form-group {
+    margin-bottom: 10px;
+    font-size: 15px;
+}   
 
 .login form{
     display: flex;
@@ -27,21 +38,17 @@ body{
     flex-direction: column;
 }
 
-.login input{
-    margin-top: 15px;
+.login input {
     background-color: #252A34;
     color: #CBD0F7;
-    padding-left: 10px;
+    padding: 5px;
     border: none;
-    height: 55px;
+    height: 10px;
     outline: none;
     border-radius: 8px;
+    width: 100%;
 }
 
-.login img{
-    width: 200px;
-    height: auto;
-}
 
 input::placeholder{
     color: #CBD0F7;
@@ -52,9 +59,44 @@ form [type="submit"]{
     display: block;
     background-color: #002b4b;
     font-size: 18px;
-    font-weight: bold 
+    font-weight: bold;
+    margin-bottom: 19px;
 }
 
-p{
-    color:#70747b;
+p a{
+    color:#9fa2a6;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
+    display: block;
+}
+.success-message {
+    color: green;
+    font-size: 0.875em;
+    margin-top: 5px;
+    display: block;
+}
+
+.lowhome h2{
+    font-size: 18px;
+    margin-top:10px ;
+    color: aliceblue;
+}
+
+.login input[type="submit"] {
+    background-color: #002b4b;
+    color: rgb(241, 240, 252);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+    border-radius: 35px;
+    height: 45px;
+}
+
+.login input[type="submit"]:hover {
+    background-color: #00587a; /* Muda a cor de fundo quando o mouse passa sobre o botão */
 }
