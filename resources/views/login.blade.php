@@ -2,9 +2,6 @@
 @section('title', 'Login')
 
 @section('content')
-    @if (auth()->check())
-        <p>Already logged in as {{ auth()->USUARIO()->USUARIO_NOME }} | <a href="{{ route('login.destroy') }}">Logout</a></p>
-    @else
         <section class="container">
             <div class="login">
                 @if(session()->has('success'))
@@ -36,8 +33,7 @@
                     <input type="submit" value="Iniciar sessão">
                 </form>
 
-                <p>Não tem uma conta? <a href="{{ route('register.show') }}">Registre-se Delta</a></p>
+                <p>Não tem uma conta? <a href="{{ route('register.show') }}">Registre-se</a></p>
             </div>
         </section>
-    @endif
 @endsection

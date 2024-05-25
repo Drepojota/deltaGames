@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -22,13 +23,15 @@ class RegisterController extends Controller
             'USUARIO_SENHA' => 'required|string|confirmed',
         ]);
 
-        User::create([
+        $user = User::create([
             'USUARIO_NOME' => $request->USUARIO_NOME,
             'USUARIO_EMAIL' => $request->USUARIO_EMAIL,
             'USUARIO_CPF' => $request->USUARIO_CPF,
             'USUARIO_SENHA' => $request->USUARIO_SENHA,
         ]);
 
-        return redirect()->route('login.index')->with('success', 'Cadastro realizado com sucesso!');
+        Auth::login($user);
+
+        return redirect()->route('home')->with('success', 'Cadastro realizado com sucesso!');
     }
 }

@@ -34,7 +34,7 @@ class LoginController extends Controller
         }
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('login.index')->with('success', 'Logado com sucesso');
+            return redirect()->route('home')->with('success', 'Logado com sucesso');
         }
 
         return back()->withErrors(['identifier' => 'Email/CPF ou senha inválidos']);

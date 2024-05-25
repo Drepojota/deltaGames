@@ -50,7 +50,12 @@
                 <li class="item-menu item-user">
                     <a href="/login">
                         <span class="icon"><i class="bi bi-person-circle"></i></span>
-                        <span class="txt-link">Login</span>
+                        @if(\Auth::check())
+                            <span class="txt-link">{{ Auth::user()->USUARIO_NOME }}</span>
+                            <a href="{{ route('logout') }}">Logout</a>
+                        @else
+                            <span class="txt-link">Login</span>
+                        @endif
                     </a>
                 </li>
             </ul>

@@ -9,6 +9,11 @@ class Carrinho extends Model
 {
     use HasFactory;
     protected $table = "CARRINHO_ITEM";
-    protected $Key = "IMAGEM_ID";
-    protected $foreignKey = "PRODUTO_ID";
+
+    public $fillable = ['USUARIO_ID', 'PRODUTO_ID', 'ITEM_QTD'];
+
+    public function produto()
+    {
+        return $this->belongsTo(Produto::class, 'PRODUTO_ID');
+    }
 }

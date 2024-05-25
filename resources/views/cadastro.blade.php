@@ -53,7 +53,7 @@
                 <input type="submit" value="Cadastrar" style="margin: 5px; height:45px">
             </form>
 
-            <p>Já tem uma conta? <a href="{{ route('login.index') }}">Iniciar sessão aqui</a></p>
+            <p>Já tem uma conta? <a href="{{ route('login.index') }}">Entrar</a></p>
         </div>
     </section>
 @endsection
