@@ -133,7 +133,39 @@
       </div>
     </div>
 
-
+    <div class="bg-table">
+      <div class="container mb-0 pb-4 containerTable-home">
+        <table class="table-home">
+          <thead class="headTable-home">
+            <tr>
+              <th colspan="3">
+                <button>todos</button>
+                <button>cat1</button>
+                <button>cat2</button>
+                <button>cat3</button>
+                <button>cat4</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bodyTable-home">
+            @foreach ($produtos->take(10) as $produto)
+            <tr>
+              <td class="imgTable-home">
+                <img src="{{ $produto->imagem->count() > 0 ? $produto->imagem[0]->IMAGEM_URL : '/image/nav/subImg.png' }}" alt="" style="height:100px; width: 250px; object-fit: cover;">
+              </td>
+              <td>
+                <h5 class="titleTable-home">{{ $produto->PRODUTO_NOME ?? 'Produto não identificado' }}</h5>
+                <p class="txtTable-home">{{ $produto->categoria->CATEGORIA_NOME }}</p>
+              </td>
+              <td class="precoTable-home">
+                {{ $produto->PRODUTO_PRECO }}
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

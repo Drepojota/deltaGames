@@ -12,12 +12,12 @@ class ProdutoController extends Controller
 {
     public function home()
     {
-        $imagens = Imagem::all();
-        $produtos = Produto::all();
+        $produtos = Produto::with('imagem')->get(); // Carregar o relacionamento 'imagem'
         $categorias = Categoria::all();
         $filtroCategorias = $categorias->random(12);
         return view('home', compact('produtos', 'filtroCategorias'));
     }
+    
 
     public function dev()
     {
