@@ -21,34 +21,28 @@ class ProdutoController extends Controller
         return view('home', compact('produtos', 'filtroCategorias', 'cat1Produtos', 'cat2Produtos', 'cat3Produtos'));
     }
     
-
-    public function dev()
-    {
-        return view('dev')->with('\dev' , produto::all());
-    }
-
     public function cart(Produto $produto)
     {
         $produto->load('categoria', 'Imagem');
-        return view('cart')->with('produto', $produto);
+        return view('Produtos.cart')->with('produto', $produto);
     }
 
     public function allProducts()
     {
         $imagens = imagem::all();
         $produtos = produto::all();
-        return view('allProducts', compact('produtos'));
+        return view('Produtos.allProducts', compact('produtos'));
     }
     public function indexProduto(Produto $produto)
     {
         $produto->load('categoria', 'Imagem');
         
-        return view('ApresProduto')->with('produto', $produto);
+        return view('Produtos.ApresProduto')->with('produto', $produto);
     }
     
     public function login()
     {
-        return view('login')->with('\login' , produto::all());
+        return view('login.login')->with('\login' , produto::all());
     }
 }
 

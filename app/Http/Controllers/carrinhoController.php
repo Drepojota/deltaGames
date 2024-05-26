@@ -15,6 +15,6 @@ class carrinhoController extends Controller
         $user = Auth::user();
         $carrinho = Carrinho::where('USUARIO_ID', $user->USUARIO_ID)->where('ITEM_QTD','>','0')->get();
 
-        return view('cart', compact('carrinho'));
+        return view('Produtos.cart', compact('carrinho'));
     }
 }

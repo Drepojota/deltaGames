@@ -160,7 +160,7 @@
           </thead>
           <tbody class="bodyTable-home" id="allTable">
             @foreach ($produtos->take(10) as $produto)
-            <tr class="produto-row" data-categoria="{{ $produto->categoria->CATEGORIA_NOME }}">
+            <tr class="produto-row py-3 my-3" data-categoria="{{ $produto->categoria->CATEGORIA_NOME }}">
               <td class="imgTable-home">
                 <a href="/jogo/{{$produto->PRODUTO_ID}}">
                   @if ($produto->imagem->count() > 0)

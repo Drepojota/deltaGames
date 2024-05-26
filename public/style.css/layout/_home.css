@@ -199,3 +199,7 @@
 .bg-table {
     background: linear-gradient(to bottom, transparent 0px, transparent 40px, #494949 20px);
 }
+
+.table-home {
+    margin: 0px 200px;
+}
