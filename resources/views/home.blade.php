@@ -75,7 +75,13 @@
               @endif
               <div class="card-body">
                 <h5 class="card-title">{{ $produto->PRODUTO_NOME ? $produto->PRODUTO_NOME : 'Produto não identificado' }}</h5>
-                <p class="card-text-price">R$ {{ $produto->PRODUTO_PRECO }}</p>
+                <p class="card-text-price">
+                  @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
+                  Gratuito
+                  @else
+                  R$ {{ $produto->PRODUTO_PRECO }}
+                  @endif
+                </p>
               </div>
             </div>
           </a>
@@ -124,7 +130,13 @@
               @endif
               <div class="card-body">
                 <h5 class="card-title">{{ $produto->PRODUTO_NOME ? $produto->PRODUTO_NOME : 'Produto não identificado' }}</h5>
-                <p class="card-text-price">R$ {{ $produto->PRODUTO_PRECO }}</p>
+                <p class="card-text-price">
+                  @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
+                  Gratuito
+                  @else
+                  R$ {{ $produto->PRODUTO_PRECO }}
+                  @endif
+                </p>
               </div>
             </div>
           </a>
@@ -139,30 +151,135 @@
           <thead class="headTable-home">
             <tr>
               <th colspan="3">
-                <button>todos</button>
-                <button>cat1</button>
-                <button>cat2</button>
-                <button>cat3</button>
-                <button>cat4</button>
+                <button id="allBtn" class="filter-btn active" data-category="all" onclick="filterTable('all')">Todos</button>
+                <button class="filter-btn" data-category="cat1" onclick="filterTable('cat1')">Battle Royale</button>
+                <button class="filter-btn" data-category="cat2" onclick="filterTable('cat2')">FPS</button>
+                <button class="filter-btn" data-category="cat3" onclick="filterTable('cat3')">Simulação</button>
               </th>
             </tr>
           </thead>
-          <tbody class="bodyTable-home">
+          <tbody class="bodyTable-home" id="allTable">
             @foreach ($produtos->take(10) as $produto)
-            <tr>
+            <tr class="produto-row" data-categoria="{{ $produto->categoria->CATEGORIA_NOME }}">
               <td class="imgTable-home">
-                <img src="{{ $produto->imagem->count() > 0 ? $produto->imagem[0]->IMAGEM_URL : '/image/nav/subImg.png' }}" alt="" style="height:100px; width: 250px; object-fit: cover;">
+                <a href="/jogo/{{$produto->PRODUTO_ID}}">
+                  @if ($produto->imagem->count() > 0)
+                  <img src="{{ $produto->imagem[0]->IMAGEM_URL }}" alt="" style="height:100px; width: 250px; object-fit: cover;">
+                  @else
+                  <img src="/image/nav/subImg.png" alt="" style="height:100px; width: 250px; object-fit: cover;">
+                  @endif
+                </a>
               </td>
               <td>
-                <h5 class="titleTable-home">{{ $produto->PRODUTO_NOME ?? 'Produto não identificado' }}</h5>
-                <p class="txtTable-home">{{ $produto->categoria->CATEGORIA_NOME }}</p>
+                <a href="/jogo/{{$produto->PRODUTO_ID}}">
+                  <h5 class="titleTable-home">{{ $produto->PRODUTO_NOME ? $produto->PRODUTO_NOME : 'Produto não identificado' }}</h5>
+                  <p class="txtTable-home">{{ $produto->categoria->CATEGORIA_NOME }}</p>
+                </a>
               </td>
               <td class="precoTable-home">
-                {{ $produto->PRODUTO_PRECO }}
+                @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
+                Gratuito
+                @else
+                R$ {{ $produto->PRODUTO_PRECO }}
+                @endif
               </td>
             </tr>
             @endforeach
           </tbody>
+
+          <tbody class="bodyTable-home hidden" id="cat1Table">
+            @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '1')->first()->Produto->take(6) as $produto)
+            <tr class="produto-row" data-categoria="{{ $produto->categoria->CATEGORIA_NOME }}">
+              <td class="imgTable-home">
+                <a href="/jogo/{{$produto->PRODUTO_ID}}">
+                  @if ($produto->imagem->count() > 0)
+                  <img src="{{ $produto->imagem[0]->IMAGEM_URL }}" alt="" style="height:100px; width: 250px; object-fit: cover;">
+                  @else
+                  <img src="/image/nav/subImg.png" alt="" style="height:100px; width: 250px; object-fit: cover;">
+                  @endif
+                </a>
+              </td>
+              <td>
+                <a href="/jogo/{{$produto->PRODUTO_ID}}">
+                  <h5 class="titleTable-home">{{ $produto->PRODUTO_NOME ? $produto->PRODUTO_NOME : 'Produto não identificado' }}</h5>
+                  <p class="txtTable-home">{{ $produto->categoria->CATEGORIA_NOME }}</p>
+                </a>
+              </td>
+              <td class="precoTable-home">
+                @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
+                Gratuito
+                @else
+                R$ {{ $produto->PRODUTO_PRECO }}
+                @endif
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+
+          <tbody class="bodyTable-home hidden" id="cat2Table">
+            @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '85')->first()->Produto->take(6) as $produto)
+            <tr class="produto-row" data-categoria="{{ $produto->categoria->CATEGORIA_NOME }}">
+              <td class="imgTable-home">
+                <a href="/jogo/{{$produto->PRODUTO_ID}}">
+                  @if ($produto->imagem->count() > 0)
+                  <img src="{{ $produto->imagem[0]->IMAGEM_URL }}" alt="" style="height:100px; width: 250px; object-fit: cover;">
+                  @else
+                  <img src="/image/nav/subImg.png" alt="" style="height:100px; width: 250px; object-fit: cover;">
+                  @endif
+                </a>
+              </td>
+              <td>
+                <a href="/jogo/{{$produto->PRODUTO_ID}}">
+                  <h5 class="titleTable-home">{{ $produto->PRODUTO_NOME ? $produto->PRODUTO_NOME : 'Produto não identificado' }}</h5>
+                  <p class="txtTable-home">{{ $produto->categoria->CATEGORIA_NOME }}</p>
+                </a>
+              </td>
+              <td class="precoTable-home">
+                <a href="/jogo/{{$produto->PRODUTO_ID}}" style="color: #fff;">
+                  @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
+                  Gratuito
+                  @else
+                  R$ {{ $produto->PRODUTO_PRECO }}
+                  @endif
+                </a>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+
+          <tbody class="bodyTable-home hidden" id="cat3Table">
+            @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '89')->first()->Produto->take(6) as $produto)
+            <tr class="produto-row" data-categoria="{{ $produto->categoria->CATEGORIA_NOME }}">
+              <td class="imgTable-home">
+                <a href="/jogo/{{$produto->PRODUTO_ID}}">
+                  @if ($produto->imagem->count() > 0)
+                  <img src="{{ $produto->imagem[0]->IMAGEM_URL }}" alt="" style="height:100px; width: 250px; object-fit: cover;">
+                  @else
+                  <img src="/image/nav/subImg.png" alt="" style="height:100px; width: 250px; object-fit: cover;">
+                  @endif
+                </a>
+              </td>
+              <td>
+                <a href="/jogo/{{$produto->PRODUTO_ID}}">
+                  <h5 class="titleTable-home">{{ $produto->PRODUTO_NOME ? $produto->PRODUTO_NOME : 'Produto não identificado' }}</h5>
+                  <p class="txtTable-home">{{ $produto->categoria->CATEGORIA_NOME }}</p>
+                </a>
+              </td>
+              <td class="precoTable-home">
+                <a href="/jogo/{{$produto->PRODUTO_ID}}" style="color: #fff;">
+                  <p>
+                    @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
+                    Gratuito
+                    @else
+                    R$ {{ $produto->PRODUTO_PRECO }}
+                    @endif
+                  </p>
+                </a>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+
         </table>
       </div>
     </div>

@@ -15,7 +15,10 @@ class ProdutoController extends Controller
         $produtos = Produto::with('imagem')->get(); // Carregar o relacionamento 'imagem'
         $categorias = Categoria::all();
         $filtroCategorias = $categorias->random(12);
-        return view('home', compact('produtos', 'filtroCategorias'));
+        $cat1Produtos = Categoria::where('CATEGORIA_ID', '1')->first()->produtos->take(10);
+        $cat2Produtos = Categoria::where('CATEGORIA_ID', '85')->first()->produtos->take(10);
+        $cat3Produtos = Categoria::where('CATEGORIA_ID', '89')->first()->produtos->take(10);
+        return view('home', compact('produtos', 'filtroCategorias', 'cat1Produtos', 'cat2Produtos', 'cat3Produtos'));
     }
     
 

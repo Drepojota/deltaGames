@@ -23,7 +23,13 @@
                     <div class="txtCompra-apres">
                         <button class="btn btn-light">+ Carrinho</button>
                         <div class="p-apres">
-                            <p>R$ {{$produto->PRODUTO_PRECO}}</p>
+                            <p>
+                                @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
+                                Gratuito
+                                @else
+                                R$ {{ $produto->PRODUTO_PRECO }}
+                                @endif
+                            </p>
                         </div>
                     </div>
                 </div>

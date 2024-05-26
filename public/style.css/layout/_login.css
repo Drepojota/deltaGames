@@ -3,7 +3,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container{
+.containerLogin{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,11 +88,11 @@ p a{
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+    transition: background-color 0.3s ease; 
     border-radius: 35px;
     height: 45px;
 }
 
 .login input[type="submit"]:hover {
-    background-color: #00587a; /* Muda a cor de fundo quando o mouse passa sobre o botão */
+    background-color: #00587a; 
 }

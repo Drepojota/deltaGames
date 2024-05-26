@@ -42,22 +42,28 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="/cart">
+                    <a href="{{ Auth::check() ? '/cart' : '/login' }}">
                         <span class="icon"><i class="bi bi-cart"></i></span>
                         <span class="txt-link">Cart</span>
                     </a>
                 </li>
+
                 <li class="item-menu item-user">
+                    @if(\Auth::check())
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-person-circle"></i></span>
+                        <?php $nomeUsuario = explode(' ', Auth::user()->USUARIO_NOME)[0]; ?>
+                        <span class="txt-link">{{ $nomeUsuario }}</span>
+                        <a href="{{ route('logout') }}"><i class="bi bi-box-arrow-right iconLogout"></i></a>
+                    </a>
+                    @else
                     <a href="/login">
                         <span class="icon"><i class="bi bi-person-circle"></i></span>
-                        @if(\Auth::check())
-                            <span class="txt-link">{{ Auth::user()->USUARIO_NOME }}</span>
-                            <a href="{{ route('logout') }}">Logout</a>
-                        @else
-                            <span class="txt-link">Login</span>
-                        @endif
+                        <span class="txt-link">Login</span>
                     </a>
+                    @endif
                 </li>
+
             </ul>
         </nav>
         <div class="main-content">

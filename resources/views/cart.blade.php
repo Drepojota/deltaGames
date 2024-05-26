@@ -52,7 +52,7 @@
                 <div class="total"><span>Total</span><br>R$ {{$total}}</div>
                 <div class="info">
                     <div class="sub"><span>Á Vista</span></div>
-                    <div class="sub"><span>R${{$item->produto->PRODUTO_PRECO}}</span></div>
+                    <div class="sub"><span>R${{$total}}</span></div>
                     <div class="pag"><span>No Pix</span></div>
                 </div>
                 <div class="button">

@@ -71,3 +71,21 @@ function ordenarJogos(tipoOrdenacao, nomeFiltro) {
 }
 
 //home
+
+function filterTable(category) {
+    // Oculta todas as tbody
+    var tables = document.querySelectorAll(".bodyTable-home");
+    for (var i = 0; i < tables.length; i++) {
+      tables[i].classList.add("hidden");
+    }
+    // Remove a classe 'active' de todos os botões
+    var buttons = document.querySelectorAll(".filter-btn");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove("active");
+    }
+    // Exibe a tbody selecionada e define seu botão como ativo
+    document.getElementById(category + "Table").classList.remove("hidden");
+    document.querySelector("button[data-category='" + category + "']").classList.add("active");
+  }
+  // Ativa o botão "Todos" por padrão
+  filterTable("all");

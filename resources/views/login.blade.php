@@ -2,7 +2,7 @@
 @section('title', 'Login')
 
 @section('content')
-        <section class="container">
+        <section class="container containerLogin">
             <div class="login">
                 @if(session()->has('success'))
                     <div class="success-message">{{ session()->get('success') }}</div>
