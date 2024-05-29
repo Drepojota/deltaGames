@@ -1,18 +1,14 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-
 class LoginController extends Controller
 {
     public function index()
     {
         return view('login.login');
     }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -25,21 +21,21 @@ class LoginController extends Controller
     
         $identifier = $request->input('identifier');
         $password = $request->input('USUARIO_SENHA');
-    
+
+        // Verifica se é um email ou CPF
         if (filter_var($identifier, FILTER_VALIDATE_EMAIL)) {
             $credentials = ['USUARIO_EMAIL' => $identifier, 'password' => $password];
         } else {
             $credentials = ['USUARIO_CPF' => $identifier, 'password' => $password];
         }
-    
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('cart')->with('success', 'Logado com sucesso');
         }
-    
+
         return back()->withErrors(['identifier' => 'Email/CPF ou senha inválidos']);
     }
-
     public function destroy()
     {
         Auth::logout();
