@@ -44,7 +44,7 @@ class CarrinhoController extends Controller
     public function removeFromCart($produto_id) // Apagar um produto do Carrinho
     {
         if (Auth::check()) {
-            $user = Auth::user();
+            $user = Auth::User();
             $carrinho_item = Carrinho::where('USUARIO_ID', $user->USUARIO_ID)
                                      ->where('PRODUTO_ID', $produto_id)
                                      ->first();

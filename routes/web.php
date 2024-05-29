@@ -25,10 +25,13 @@ require __DIR__ . '/auth.php';
 Route::get('/home', [ProdutoController::class, 'home'])->name('home');
 Route::get('/search', [ProdutoController::class, 'search'])->name('search');
 
-Route::get('/cart', [CarrinhoController::class, 'carrinho'])->name('cart');
-Route::post('/cart/add/{produto_id}', [CarrinhoController::class, 'addToCart'])->name('cart.add');
-Route::delete('/cart/remove/{produto_id}', [CarrinhoController::class, 'removeFromCart'])->name('cart.remove');
-Route::delete('/cart/clear', [CarrinhoController::class, 'clearCart'])->name('cart.clear');
+//O group é usado para garantir que apenas usuários autenticados possam acessar as rotas dentro do Carrinho
+Route::middleware('auth')->group(function () {
+    Route::get('/cart', [CarrinhoController::class, 'carrinho'])->name('cart');
+    Route::post('/cart/add/{produto_id}', [CarrinhoController::class, 'addToCart'])->name('cart.add');
+    Route::delete('/cart/remove/{produto_id}', [CarrinhoController::class, 'removeFromCart'])->name('cart.remove');
+    Route::delete('/cart/clear', [CarrinhoController::class, 'clearCart'])->name('cart.clear');
+});
 
 Route::get('/dev', [ProdutoController::class, 'dev']);
 Route::get('/jogo/{produto}', [ProdutoController::class, 'indexProduto']);

@@ -22,21 +22,21 @@ class LoginController extends Controller
             'identifier.required' => 'O campo de email ou CPF é obrigatório',
             'USUARIO_SENHA.required' => 'O campo senha é obrigatório',
         ]);
-
+    
         $identifier = $request->input('identifier');
         $password = $request->input('USUARIO_SENHA');
-
-        // Verifica se é um email ou CPF
+    
         if (filter_var($identifier, FILTER_VALIDATE_EMAIL)) {
             $credentials = ['USUARIO_EMAIL' => $identifier, 'password' => $password];
         } else {
             $credentials = ['USUARIO_CPF' => $identifier, 'password' => $password];
         }
-
+    
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home')->with('success', 'Logado com sucesso');
+            $request->session()->regenerate();
+            return redirect()->intended('cart')->with('success', 'Logado com sucesso');
         }
-
+    
         return back()->withErrors(['identifier' => 'Email/CPF ou senha inválidos']);
     }
 
