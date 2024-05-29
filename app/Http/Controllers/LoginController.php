@@ -9,17 +9,17 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function index(){
+    public function index($USUARIO, $USUARIO_EMAIL = "", $USUARIO_SENHA=""){
         return view('login');
     }
 
     public function store(Request $request){
         $request->validate([
-            'USUARIO_EMAIL' =>'required|email',
-            'USUARIO_SENHA' =>'required'
+            '$USUARIO_EMAIL' =>'required|email',
+            '$USUARIO_SENHA' =>'required|password'
         ],[
             'USUARIO_EMAIL.required' => 'O campo email é obrigatório',
-            "USUARIO_EMAIL.email" =>"Esse campo tem que ter um email vaido",
+            "USUARIO_EMAIL.email" =>"Esse campo tem que ter um email valido",
             'USUARIO_SENHA.required' => 'O campo senha é obrigatório'
         ]);
 

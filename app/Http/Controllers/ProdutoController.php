@@ -40,11 +40,6 @@ class ProdutoController extends Controller
         
         return view('ApresProduto')->with('produto', $produto);
     }
-    
-    public function login()
-    {
-        return view('login')->with('\login' , produto::all());
-    }
 
     public function pagProduto()
     {

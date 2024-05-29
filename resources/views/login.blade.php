@@ -13,12 +13,12 @@
     @enderror
 
     @if(session()->has('success')) 
-    {{ session()->get('sucess') }}
+    {{ session()->get('success') }}
     @endif
 
 
     @if (auth()->check())
-    Already logged in  {{auth()->user()->USUARIO_NOME}} | <a href="{{ route('entrar.destroy') }}">Logout</a>
+    Already logged in  {{auth()->user()->USUARIO_NOME}} | <a href="{{ route('login.destroy') }}">Logout</a>
         
 
     @else
@@ -31,10 +31,10 @@
     <section class="area-login">
         <div class="login">
             <div>
-                <img src="{{ asset('image/nav/logo.png') }}" alt="Logo">
+                <img src="{{ asset('/image/nav/logo.png') }}" alt="Logo">
             </div>
     
-            <form action="{{ route('entrar.store') }}" method="POST">
+            <form action="{{ route('login.store') }}" method="POST">
                 @csrf
                 <input type="email" name="USUARIO_EMAIL"  placeholder="Email de usuário:" required autofocus> 
                 @error('USUARIO_EMAIL')
