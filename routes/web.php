@@ -24,7 +24,10 @@ require __DIR__ . '/auth.php';
 
 Route::get('/home', [ProdutoController::class, 'home'])->name('home');
 Route::get('/search', [ProdutoController::class, 'search'])->name('search');
+
 Route::get('/cart', [CarrinhoController::class, 'carrinho'])->name('cart');
+Route::post('/cart/add/{produto_id}', [CarrinhoController::class, 'addToCart'])->name('cart.add');
+
 Route::get('/dev', [ProdutoController::class, 'dev']);
 Route::get('/jogo/{produto}', [ProdutoController::class, 'indexProduto']);
 Route::get('/jogos', [ProdutoController::class, 'allProducts']);
