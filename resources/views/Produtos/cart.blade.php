@@ -62,6 +62,13 @@
                 <div class="button">
                     <button><img src="/image/carrinho/carrinho2.png">Finalizar Pedido</button>
                 </div>
+                <div class="button">
+                    <form action="{{ route('cart.clear') }}" method="POST" onsubmit="return confirm('Tem certeza que deseja limpar o carrinho?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete">Limpar Carrinho</button>
+                    </form>
+                </div>
             </div>
         </aside>
     </div>

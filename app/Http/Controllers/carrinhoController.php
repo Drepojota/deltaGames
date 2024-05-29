@@ -41,7 +41,7 @@ class CarrinhoController extends Controller
         }
     }
 
-    public function removeFromCart($produto_id)
+    public function removeFromCart($produto_id) // Apagar um produto do Carrinho
     {
         if (Auth::check()) {
             $user = Auth::user();
@@ -58,6 +58,18 @@ class CarrinhoController extends Controller
             return redirect()->route('cart');
         } else {
             return redirect()->route('login')->with('error', 'Você precisa fazer login para remover produtos do carrinho.');
+        }
+    }
+
+    public function clearCart() // Apagar Todo o carrinho
+    {
+        if (Auth::check()) {
+            $user = Auth::User();
+            Carrinho::where('USUARIO_ID', $user->USUARIO_ID)->delete();
+
+            return redirect()->route('cart');
+        } else {
+            return redirect()->route('login')->with('error', 'Você precisa fazer login para limpar o carrinho.');
         }
     }
 }
