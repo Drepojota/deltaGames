@@ -9,12 +9,13 @@ class Carrinho extends Model
 {
     use HasFactory;
 
-    protected $table = "CARRINHO_ITEM";
-    protected $primaryKey = null; // Indica que não há uma chave primária auto-incrementável
-
+    protected $table = 'CARRINHO_ITEM';
+    
     public $incrementing = false;
+    
+    // Indica que não há chave primária
+    protected $primaryKey = null; 
 
-    // Define os campos que não são incrementáveis
     protected $fillable = ['USUARIO_ID', 'PRODUTO_ID', 'ITEM_QTD'];
 
     public $timestamps = false;

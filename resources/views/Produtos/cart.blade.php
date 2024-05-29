@@ -39,7 +39,11 @@
                         </td>
                         <td>R$ {{$item->produto->PRODUTO_PRECO}}</td>
                         <td>
-                            <button class="delete"><i class='bx bx-x'></i></button>
+                            <form action="{{ route('cart.remove', $item->PRODUTO_ID) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja remover este item?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="delete"><i class='bx bx-x'></i></button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
