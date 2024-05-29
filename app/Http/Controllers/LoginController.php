@@ -2,48 +2,47 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class LoginController extends Controller
 {
-    public function index($USUARIO, $USUARIO_EMAIL = "", $USUARIO_SENHA=""){
-        return view('login');
-    }
-
-    public function store(Request $request){
-        $request->validate([
-            '$USUARIO_EMAIL' =>'required|email',
-            '$USUARIO_SENHA' =>'required|password'
-        ],[
-            'USUARIO_EMAIL.required' => 'O campo email é obrigatório',
-            "USUARIO_EMAIL.email" =>"Esse campo tem que ter um email valido",
-            'USUARIO_SENHA.required' => 'O campo senha é obrigatório'
-        ]);
-
-        $credentials = $request->only('USUARIO_EMAIL', 'USUARIO_SENHA');
-       $authenticated = Auth::attempt($credentials);
-
-       if(!$authenticated){
-        return redirect()->route('entrar.index')->withErrors(['error' => 'email ou senha inválidos']);
-       }
-       return redirect()->route('entrar.index')->with('success', 'logget in');
-    }
-    protected function customAttempt($credentials)
+    public function index()
     {
-        $USUARIO = User::where('USUARIO_EMAIL', $credentials['USUARIO_EMAIL'])->first();
-
-        if (!$USUARIO) {
-            return false;
-        }
-
-        return Hash::check($credentials['USUARIO_SENHA'], $USUARIO->USUARIO_SENHA);
+        return view('login.login');
     }
 
+    public function store(Request $request)
+    {
+        $request->validate([
+            'identifier' => 'required|string',
+            'USUARIO_SENHA' => 'required|string',
+        ], [
+            'identifier.required' => 'O campo de email ou CPF é obrigatório',
+            'USUARIO_SENHA.required' => 'O campo senha é obrigatório',
+        ]);
+    
+        $identifier = $request->input('identifier');
+        $password = $request->input('USUARIO_SENHA');
+    
+        if (filter_var($identifier, FILTER_VALIDATE_EMAIL)) {
+            $credentials = ['USUARIO_EMAIL' => $identifier, 'password' => $password];
+        } else {
+            $credentials = ['USUARIO_CPF' => $identifier, 'password' => $password];
+        }
+    
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('cart')->with('success', 'Logado com sucesso');
+        }
+    
+        return back()->withErrors(['identifier' => 'Email/CPF ou senha inválidos']);
+    }
 
-    public function destroy(){
-        var_dump('logout');
+    public function destroy()
+    {
+        Auth::logout();
+        return redirect()->route('login.index')->with('success', 'Você foi desconectado');
     }
 }

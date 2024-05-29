@@ -1,38 +1,47 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    protected $table = 'USUARIO'; // Defina explicitamente o nome da tabela
+    use Notifiable;
+
+    protected $table = 'USUARIO';
+    protected $primaryKey = "USUARIO_ID";
 
     protected $fillable = [
-        "USUARIO_ID",
-        "USUARIO_NOME",
+        'USUARIO_NOME', 
         'USUARIO_EMAIL',
-        'USUARIO_SENHA'
-
+        'USUARIO_CPF', 
+        'USUARIO_SENHA',
     ];
 
     protected $hidden = [
-        'USUARIO_SENHA', // hashing de senha
+        'USUARIO_SENHA', 
+        'remember_token',
     ];
 
-    public function setPasswordAttribute($USUARIO_SENHA)
-    {
-        $this->attributes['USUARIO_SENHA'] = bcrypt($USUARIO_SENHA);
-    }
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 
-    // Override para username
-    public function getAuthIdentifierName()
-    {
-        return 'USUARIO_EMAIL';
-    }
-
-    // Override para senha
     public function getAuthPassword()
     {
         return $this->USUARIO_SENHA;
+    }
+    
+    public function setUSUARIOSenhaAttribute($value)
+    {
+        $this->attributes['USUARIO_SENHA'] = bcrypt($value);
+    }
+
+    public $timestamps = false;
+
+    public function products()
+    {
+        return $this->belongsToMany(Produto::class, 'CARRINHO_ITEM', 'USUARIO_ID', 'PRODUTO_ID');
     }
 }
