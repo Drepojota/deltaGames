@@ -21,10 +21,14 @@
                         <h5>{{$produto->PRODUTO_NOME}}</h5>
                     </div>
                     <div class="txtCompra-apres">
-                        <form action="{{ route('cart.add', ['produto_id' => $produto->PRODUTO_ID]) }}" method="POST">
+                        <form action="{{ Auth::check() ? route('cart.add', ['produto_id' => $produto->PRODUTO_ID]) : route('login.index') }}" method="POST">
                             @csrf
-                            <button type="submit" class="btn btn-light">+ Carrinho</button>
-                        </form>                        
+                            @if (Auth::check())
+                                <button type="submit" class="btn btn-light">+ Carrinho</button>
+                            @else
+                                <a href="{{ route('login.index') }}" class="btn btn-light">+ carrinho</a>
+                            @endif
+                        </form>                
                         <div class="p-apres">
                             <p>
                                 @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
