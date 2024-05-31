@@ -24,9 +24,9 @@
                         <form action="{{ Auth::check() ? route('cart.add', ['produto_id' => $produto->PRODUTO_ID]) : route('login.index') }}" method="POST">
                             @csrf
                             @if (Auth::check())
-                                <button type="submit" class="btn btn-light">+ Carrinho</button>
+                                <button type="submit" class="btn btn-light">Adquirir</button>
                             @else
-                                <a href="{{ route('login.index') }}" class="btn btn-light">+ carrinho</a>
+                                <a href="{{ route('login.index') }}" class="btn btn-light">Adquirir</a>
                             @endif
                         </form>                
                         <div class="p-apres">
