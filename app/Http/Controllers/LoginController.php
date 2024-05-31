@@ -31,7 +31,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('cart')->with('success', 'Logado com sucesso');
+            return redirect()->intended('home')->with('success', 'Logado com sucesso');
         }
 
         return back()->withErrors(['identifier' => 'Email/CPF ou senha inválidos']);
@@ -39,6 +39,6 @@ class LoginController extends Controller
     public function destroy()
     {
         Auth::logout();
-        return redirect()->route('login.index')->with('success', 'Você foi desconectado');
+        return redirect()->route('home')->with('success', 'Você foi desconectado');
     }
 }

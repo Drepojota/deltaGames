@@ -130,3 +130,24 @@
     height: 500px;
     object-fit: fill;
 }
+
+.acquire-button {
+    width: 120px;
+    height: 40px;
+    border: .5px solid #fff;
+    transition: .4s;
+    background-color: #8094a4;
+    color: #fff;
+    border-radius: 0px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 0; 
+}
+
+.acquire-button:hover {
+    background-color: #4f5c68;
+    color: #fff;
+}
