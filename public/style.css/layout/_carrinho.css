@@ -36,6 +36,7 @@ main > button {
 thead {
     background-color: #002a4bc9;
     height: 45px;
+    
 }
 
 thead tr th{
@@ -54,16 +55,18 @@ tbody {
     background-color: white;
 }
 
-tbody tr{
-    border-bottom: 3px solid #ccc;
+tbody tr{ 
+    border-bottom: 10px solid #002a4bc9 ;
+
 }
 
 tbody tr:last-child{
-    border: 0;
+    border-bottom: 10px;
 }
 
 tbody tr td {
-    padding: 30px 0;
+    font-weight: bold;
+    padding: 30px;
     color: black;
 }
 
@@ -73,9 +76,9 @@ tbody tr td {
 }
 
 .produto img {
-    border-radius: 6px;
-    height: 100px;
-    width: auto;
+    border-radius: 8px;
+    height: 115px;
+    width: 160px;
     padding-left: 5px;
 }
 
@@ -84,11 +87,13 @@ tbody tr td {
 }
 
 .produto .info .name {
- font-size: 20px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .produto .info .desc {
     color: #ccc;
+
 }
 
 .delete {
@@ -104,7 +109,7 @@ tbody tr td {
 }
 
 .delete:hover {
-    background: #ccc;
+    background: red;
 }
 
 .qtd {
@@ -140,6 +145,7 @@ aside .box {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     margin-right: 100px;
+    margin-top: 20px;
 
 }
 
@@ -150,7 +156,6 @@ aside button {
     background: white;
     width: 300px;
     height: 50px;
-    border-radius: 8px;
 }
 
 aside .button {
@@ -163,6 +168,10 @@ aside .button {
     display: flex;
     border-top: 3px white solid;
     text-decoration: none;
+}
+
+aside .purchase-button:hover {
+    background-color: green;
 }
 
 aside button img {
@@ -182,7 +191,7 @@ aside .box header {
 
 aside .box .info {
     padding: 20px;
-    background-color: #8094a4;
+    background-color: #002a4bc9;
     text-align: center;
 }
 
@@ -193,9 +202,6 @@ aside .box .total{
     font-size: 24px;
     color: black;
     padding-bottom: 25px;
-    
-    
-    
 }
 
 .sub {
@@ -205,4 +211,16 @@ aside .box .total{
 
 .pag {
     color: white;
+}
+
+.button-cleanmarket {
+    border-top: 1px 0px black;
+    width: 350px;
+    font-size: medium;
+    color: white ;
+    background-color: #002a4bc9;
+}
+
+aside .button-cleanmarket:hover {
+    background-color: red;
 }

@@ -6,6 +6,24 @@
 
 <main>
     <div class="page-title">Carrinho de compras</div>
+    <div class="customDrop container">
+        <div class="orderConfig">
+          <div class="txt-order">
+            <p>Ordenar por:</p>
+          </div>
+          <div class="dropdown dropdown-order">
+            <button class="btn btn-secondary dropdown-toggle btn-order" type="button" id="dropdownFiltro" aria-expanded="false" data-toggle="dropdown" aria-haspopup="true">
+              Escolha a Ordenação
+            </button>
+            <ul class="dropdown-menu menu-order" aria-labelledby="dropdownMenuButton" style="background-color: #333232;">
+              <li><a class="dropdown-item item-order" href="#" onclick="ordenarJogos('AZ', 'A-Z')">A-Z</a></li>
+              <li><a class="dropdown-item item-order" href="#" onclick="ordenarJogos('ZA', 'Z-A')">Z-A</a></li>
+              <li><a class="dropdown-item item-order" href="#" onclick="ordenarJogos('menorPreco', 'Menor Preço')">Menor Preço</a></li>
+              <li><a class="dropdown-item item-order" href="#" onclick="ordenarJogos('maiorPreco', 'Maior Preço')">Maior Preço</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     <div class="content">
         <section>
             <table>
@@ -42,7 +60,7 @@
                             <form action="{{ route('cart.remove', $item->PRODUTO_ID) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja remover este item?');">
                                 @csrf
                                 @method('DELETE')
-                                <button style="background-color: aliceblue" type="submit" class="delete"><i class='bx bx-x'></i></button>
+                                <button class="delete" type="submit" ><i class='bx bx-x'></i></button>
                             </form>
                         </td>
                     </tr>
@@ -50,23 +68,24 @@
                 </tbody>
             </table>
         </section>
-        <aside>
+        
+        <aside> 
             <div class="box">
                 <header>Resumo</header>
-                <div class="total"><span>Total</span><br>R$ {{$total}}</div>
+                <div class="total"><span>Total do carrinho</span><br>R$ {{$total}}</div>
                 <div class="info">
                     <div class="sub"><span>Á Vista</span></div>
                     <div class="sub"><span>R${{$total}}</span></div>
                     <div class="pag"><span>No Pix</span></div>
                 </div>
                 <div class="button">
-                    <button><img src="/image/carrinho/carrinho2.png">Finalizar Pedido</button>
+                    <button class="purchase-button"><img src="/image/carrinho/carrinho2.png">Finalizar Pedido</button>
                 </div>
-                <div class="button">
+                <div >
                     <form action="{{ route('cart.clear') }}" method="POST" onsubmit="return confirm('Tem certeza que deseja limpar o carrinho?');">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="delete">Limpar Carrinho</button>
+                        <button  type="submit" class="button-cleanmarket">Limpar Carrinho</button>
                     </form>
                 </div>
             </div>

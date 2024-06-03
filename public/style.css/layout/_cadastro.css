@@ -67,7 +67,6 @@ input::placeholder{
 
 form [type="submit"]{
     display: block;
-    background-color: #002b4b;
     font-size: 18px;
     font-weight: bold 
 }
