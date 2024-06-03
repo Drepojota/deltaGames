@@ -122,12 +122,13 @@ ul.list-group li.list-group-item {
 }
 
 .orderConfig {
-    width: 350px;
+    width: 320px;
     position: relative;
     right: 0;
     top: 0;
     display: flex;
     justify-content: space-between;
+    margin-right: 15px;
 }
 
 .page-title h1{
