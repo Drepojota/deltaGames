@@ -20,7 +20,7 @@
             <div class="container-compra-apres">
                 <div class="compra-apres">
                     <div class="txt-tituloCompra">
-                        <h5>{{ $produto->PRODUTO_NOME }}</h5>
+                    <h5>{{ $produto->PRODUTO_NOME }}</h5>
                     </div>
                     <div class="txtCompra-apres">
                         <form action="{{ Auth::check() ? route('cart.add', ['produto_id' => $produto->PRODUTO_ID]) : route('login.index') }}" method="POST">

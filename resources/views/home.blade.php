@@ -59,12 +59,12 @@
     <div class="container containerJogos-home">
       <div class="row" id="jogosContainer">
         <div class="txtContainer-jogo">
-          <h2>Battle Royale</h2>
+          <h2>Luta</h2>
           <button class="btn-jogo-home">
-            <a href="/jogos/1" class="btn-jogo-home-link">Ver Mais</a>
+            <a href="/jogos/2" class="btn-jogo-home-link">Ver Mais</a>
           </button>
         </div>
-        @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '1')->first()->Produto->take(6) as $produto)
+        @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '2')->first()->Produto->take(6) as $produto)
         <div class="col-md-2 jogo">
           <a href="/jogo/{{$produto->PRODUTO_ID}}" class="card-link">
             <div class="card">
@@ -114,12 +114,12 @@
     <div class="container containerJogos-home">
       <div class="row" id="jogosContainer">
         <div class="txtContainer-jogo">
-          <h2>Simulação</h2>
+          <h2>Corrida</h2>
           <button class="btn-jogo-home">
-            <a href="/jogos/89" class="btn-jogo-home-link">Ver Mais</a>
+            <a href="/jogos/79" class="btn-jogo-home-link">Ver Mais</a>
           </button>
         </div>
-        @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '89')->first()->Produto->take(6) as $produto)
+        @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '79')->first()->Produto->take(6) as $produto)
         <div class="col-md-2 jogo">
           <a href="/jogo/{{$produto->PRODUTO_ID}}" class="card-link">
             <div class="card">
@@ -159,7 +159,7 @@
             </tr>
           </thead>
           <tbody class="bodyTable-home" id="allTable">
-            @foreach ($produtos->take(10) as $produto)
+            @foreach ($produtos as $produto)
             <tr class="produto-row py-3 my-3" data-categoria="{{ $produto->categoria->CATEGORIA_NOME }}">
               <td class="imgTable-home">
                 <a href="/jogo/{{$produto->PRODUTO_ID}}">
@@ -188,7 +188,7 @@
           </tbody>
 
           <tbody class="bodyTable-home hidden" id="cat1Table">
-            @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '1')->first()->Produto->take(6) as $produto)
+            @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '1')->first()->Produto as $produto)
             <tr class="produto-row" data-categoria="{{ $produto->categoria->CATEGORIA_NOME }}">
               <td class="imgTable-home">
                 <a href="/jogo/{{$produto->PRODUTO_ID}}">
@@ -217,7 +217,7 @@
           </tbody>
 
           <tbody class="bodyTable-home hidden" id="cat2Table">
-            @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '85')->first()->Produto->take(6) as $produto)
+            @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '85')->first()->Produto as $produto)
             <tr class="produto-row" data-categoria="{{ $produto->categoria->CATEGORIA_NOME }}">
               <td class="imgTable-home">
                 <a href="/jogo/{{$produto->PRODUTO_ID}}">
@@ -248,7 +248,7 @@
           </tbody>
 
           <tbody class="bodyTable-home hidden" id="cat3Table">
-            @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '89')->first()->Produto->take(6) as $produto)
+            @foreach (\App\Models\Categoria::where('CATEGORIA_ID', '89')->first()->Produto as $produto)
             <tr class="produto-row" data-categoria="{{ $produto->categoria->CATEGORIA_NOME }}">
               <td class="imgTable-home">
                 <a href="/jogo/{{$produto->PRODUTO_ID}}">
