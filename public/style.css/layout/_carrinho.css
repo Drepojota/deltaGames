@@ -6,7 +6,7 @@ main {
 main .page-title {
     font-size: 40px;
     padding: 20px 0;
-    margin-left: 100px;
+    margin-left: 150px;
     color: white;
 }
 
@@ -15,7 +15,9 @@ main .page-title {
 }
 
 main section {
+    margin-left: 50px;
     flex: 1;
+    margin-bottom: 50px;
 }
 
 main aside {
@@ -44,7 +46,7 @@ thead tr th{
     padding-bottom: 10px;
     text-transform: uppercase;
     color: white;
-    padding-left: 5px;
+    padding-left: 35px;
 }
 
 thead tr {
@@ -187,6 +189,7 @@ aside .box header {
     border-bottom: white 3px solid;
     color: white;
     font-size: 18px;
+    text-align: center;
 }
 
 aside .box .info {

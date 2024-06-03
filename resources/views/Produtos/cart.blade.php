@@ -6,24 +6,7 @@
 
 <main>
     <div class="page-title">Carrinho de compras</div>
-    <div class="customDrop container">
-        <div class="orderConfig">
-          <div class="txt-order">
-            <p>Ordenar por:</p>
-          </div>
-          <div class="dropdown dropdown-order">
-            <button class="btn btn-secondary dropdown-toggle btn-order" type="button" id="dropdownFiltro" aria-expanded="false" data-toggle="dropdown" aria-haspopup="true">
-              Escolha a Ordenação
-            </button>
-            <ul class="dropdown-menu menu-order" aria-labelledby="dropdownMenuButton" style="background-color: #333232;">
-              <li><a class="dropdown-item item-order" href="#" onclick="ordenarJogos('AZ', 'A-Z')">A-Z</a></li>
-              <li><a class="dropdown-item item-order" href="#" onclick="ordenarJogos('ZA', 'Z-A')">Z-A</a></li>
-              <li><a class="dropdown-item item-order" href="#" onclick="ordenarJogos('menorPreco', 'Menor Preço')">Menor Preço</a></li>
-              <li><a class="dropdown-item item-order" href="#" onclick="ordenarJogos('maiorPreco', 'Maior Preço')">Maior Preço</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+  
     <div class="content">
         <section>
             <table>
@@ -33,13 +16,14 @@
                         <th>Preço</th>
                         <th>Quantidade</th>
                         <th>Total</th>
-                        <th>X</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
+                    {{ $desconto = 0.85}}
                     {{ $total = 0 }}
                     @foreach($carrinho as $item)
-                    {{ $total += $item->produto->PRODUTO_PRECO * $item->ITEM_QTD  }}
+                    {{ $total += $item->produto->PRODUTO_PRECO * $item->ITEM_QTD }}
                     <tr>
                         <td>
                             <div class="produto">
@@ -55,7 +39,7 @@
                                 <span>{{$item->ITEM_QTD}}</span>
                             </div>
                         </td>
-                        <td>R$ {{$item->produto->PRODUTO_PRECO}}</td>
+                        <td>R$ {{$item->produto->PRODUTO_PRECO * $item->ITEM_QTD}}</td>
                         <td>
                             <form action="{{ route('cart.remove', $item->PRODUTO_ID) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja remover este item?');">
                                 @csrf
@@ -72,10 +56,10 @@
         <aside> 
             <div class="box">
                 <header>Resumo</header>
-                <div class="total"><span>Total do carrinho</span><br>R$ {{$total}}</div>
+                <div class="total"><span>Total do carrinho</span><br>R$ {{$total}}0</div>
                 <div class="info">
-                    <div class="sub"><span>Á Vista</span></div>
-                    <div class="sub"><span>R${{$total}}</span></div>
+                    <div class="sub"><span>Á Vista com -15%</span></div>
+                    <div class="sub"><span>R${{$total = ($total * $desconto)}}</span></div>
                     <div class="pag"><span>No Pix</span></div>
                 </div>
                 <div class="button">
