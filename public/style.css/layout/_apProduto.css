@@ -1,9 +1,12 @@
 .section-apres {
-    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.apresSem {
+    background-color: #494949;
 }
 
 .container-apres {
@@ -26,8 +29,6 @@
     border-bottom: 1px solid #ffffff;
     border-left: 1px solid #ffffff;
     border-top: 1px solid #ffffff;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
 }
 
 .bloco2-apres {
@@ -41,8 +42,6 @@
     display: flex;
     padding-right: 20px;
     padding-left: 20px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
 }
 
 .txt-apres {
@@ -145,6 +144,7 @@
     text-decoration: none;
     font-size: 16px;
     padding: 0; 
+    text-decoration: none;
 }
 
 .acquire-button:hover {

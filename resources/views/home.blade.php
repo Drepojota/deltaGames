@@ -79,7 +79,7 @@
                   @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
                   Gratuito
                   @else
-                  R$ {{ $produto->PRODUTO_PRECO }}
+                  R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}
                   @endif
                 </p>
               </div>
@@ -134,7 +134,7 @@
                   @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
                   Gratuito
                   @else
-                  R$ {{ $produto->PRODUTO_PRECO }}
+                  R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}
                   @endif
                 </p>
               </div>
@@ -180,7 +180,7 @@
                 @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
                 Gratuito
                 @else
-                R$ {{ $produto->PRODUTO_PRECO }}
+                R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}
                 @endif
               </td>
             </tr>
@@ -209,7 +209,7 @@
                 @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
                 Gratuito
                 @else
-                R$ {{ $produto->PRODUTO_PRECO }}
+                R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}
                 @endif
               </td>
             </tr>
@@ -239,7 +239,7 @@
                   @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
                   Gratuito
                   @else
-                  R$ {{ $produto->PRODUTO_PRECO }}
+                  R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}
                   @endif
                 </a>
               </td>
@@ -271,7 +271,7 @@
                     @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
                     Gratuito
                     @else
-                    R$ {{ $produto->PRODUTO_PRECO }}
+                    R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}
                     @endif
                   </p>
                 </a>

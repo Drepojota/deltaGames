@@ -227,3 +227,8 @@ aside .box .total{
 aside .button-cleanmarket:hover {
     background-color: red;
 }
+
+.calculo {
+    display: none;
+    visibility: hidden;
+}

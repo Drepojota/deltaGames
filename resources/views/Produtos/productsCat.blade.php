@@ -9,6 +9,13 @@
 @section('content')
 
 <div class="body">
+
+  <div class="container container-pesquisa">
+    <form class="d-flex pesquisa-home" role="search">
+      <input id="search" class="form-control me-2 barraPesquisa" type="search" placeholder="Encontre jogos e muito mais" aria-label="Search">
+    </form>
+  </div>
+
   <article>
     <div class="filtroCat container">
       <div class="title-page d-flex align-items-center">
@@ -51,12 +58,8 @@
 
     <div class="container">
       <div class="row" id="jogosContainer">
-        @php
-        $count = $categoria->Produto->count();
-        $colClass = $count >= 6 ? 'col-md-2' : 'col';
-        @endphp
         @foreach ($categoria->Produto as $produto)
-        <div class="{{ $colClass }} jogo">
+        <div class="col-md-2 jogo">
           <a href="/jogo/{{$produto->PRODUTO_ID}}" class="card-link">
             <div class="card">
               @if ($produto->IMAGEM->count() > 0)
@@ -66,7 +69,7 @@
               @endif
               <div class="card-body">
                 <h5 class="card-title">{{ $produto->PRODUTO_NOME ? $produto->PRODUTO_NOME : 'Produto não identificado' }}</h5>
-                <p class="card-text-price">R$ {{ $produto->PRODUTO_PRECO }}</p>
+                <p class="card-text-price">R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}</p>
               </div>
             </div>
           </a>

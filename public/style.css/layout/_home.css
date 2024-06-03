@@ -107,6 +107,10 @@
     color: #fff;
 }
 
+#jogosContainer {
+    width: 100%;
+}
+
 /*Categoria*/
 
 .containerCat-home {

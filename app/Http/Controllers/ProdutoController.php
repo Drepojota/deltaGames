@@ -27,7 +27,6 @@ class ProdutoController extends Controller
     {
         $produto->load('categoria', 'Imagem');
         return view('Produtos.cart')->with('produto', $produto);
-        return view('Produtos.cart')->with('produto', $produto);
     }
 
     public function allProducts()
@@ -35,26 +34,30 @@ class ProdutoController extends Controller
         $imagens = imagem::all();
         $produtos = produto::all();
         return view('Produtos.allProducts', compact('produtos'));
-        return view('Produtos.allProducts', compact('produtos'));
     }
     public function indexProduto(Produto $produto)
     {
+        // Carregar as relações categoria e Imagem do produto atual
         $produto->load('categoria', 'Imagem');
-        
-        return view('Produtos.ApresProduto')->with('produto', $produto);
-        return view('Produtos.ApresProduto')->with('produto', $produto);
+    
+        // Obter produtos semelhantes da mesma categoria, excluindo o produto atual
+        $produtosSemelhantes = Produto::where('CATEGORIA_ID', $produto->CATEGORIA_ID)
+                                      ->where('PRODUTO_ID', '!=', $produto->PRODUTO_ID) // Excluir o produto atual
+                                      ->take(6)
+                                      ->get();
+    
+        // Passar os dados para a view
+        return view('Produtos.ApresProduto')->with([
+            'produto' => $produto,
+            'produtosSemelhantes' => $produtosSemelhantes
+        ]);
     }
+    
     
     public function login()
     {
         return view('login.login')->with('\login' , produto::all());
     }
-    
-    public function pagProduto()
-    {
-        return view('ApresProduto')->with('\pagProduto' , Produto::all());
-    }
-
 }
 
 
