@@ -6,7 +6,7 @@ main {
 main .page-title {
     font-size: 40px;
     padding: 20px 0;
-    margin-left: 150px;
+    margin-left: 300px;
     color: white;
 }
 
@@ -15,7 +15,7 @@ main .page-title {
 }
 
 main section {
-    margin-left: 50px;
+    margin-left: 200px;
     flex: 1;
     margin-bottom: 50px;
 }
@@ -147,8 +147,10 @@ aside .box {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     margin-right: 100px;
-    margin-top: 20px;
-
+    display: block;
+    position:sticky;
+    top: 35px;
+    
 }
 
 aside button {
@@ -232,3 +234,4 @@ aside .button-cleanmarket:hover {
     display: none;
     visibility: hidden;
 }
+   
