@@ -5,7 +5,6 @@
 
 <main>
     <div class="page-title">Carrinho de compras</div>
-
     <div class="content">
         <section>
             <table>
@@ -77,9 +76,6 @@
                     </form>
                 </div>
             </div>
-
-         
-
         </aside>
     </div>
 </main>
@@ -94,9 +90,10 @@
         </div>
         @php
         $produtosNoCarrinho = $carrinho->pluck('produto.PRODUTO_ID')->toArray();
-        $produtosParaExibir = \App\Models\Categoria::all()->first()->Produto->whereNotIn('PRODUTO_ID', $produtosNoCarrinho)->take(6);
+        $todosProdutos = \App\Models\Produto::all();
+        $produtosParaExibir = $todosProdutos->whereNotIn('PRODUTO_ID', $produtosNoCarrinho);
         @endphp
-        @foreach ($produtosParaExibir as $produto)
+        @foreach ($produtosParaExibir->random(6) as $produto)
         <div class="col-md-2 jogo">
             <a href="/jogo/{{$produto->PRODUTO_ID}}" class="card-link">
                 <div class="card">
@@ -121,5 +118,6 @@
         @endforeach
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 @endsection
