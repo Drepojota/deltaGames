@@ -37,16 +37,11 @@ class ProdutoController extends Controller
     }
     public function indexProduto(Produto $produto)
     {
-        // Carregar as relações categoria e Imagem do produto atual
         $produto->load('categoria', 'Imagem');
-    
-        // Obter produtos semelhantes da mesma categoria, excluindo o produto atual
         $produtosSemelhantes = Produto::where('CATEGORIA_ID', $produto->CATEGORIA_ID)
-                                      ->where('PRODUTO_ID', '!=', $produto->PRODUTO_ID) // Excluir o produto atual
+                                      ->where('PRODUTO_ID', '!=', $produto->PRODUTO_ID)
                                       ->take(6)
                                       ->get();
-    
-        // Passar os dados para a view
         return view('Produtos.ApresProduto')->with([
             'produto' => $produto,
             'produtosSemelhantes' => $produtosSemelhantes
