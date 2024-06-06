@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Imagem;
 use App\Models\Categoria;
