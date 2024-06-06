@@ -69,7 +69,13 @@
                             @endif
                             <div class="card-body">
                                 <h5 class="card-title">{{ $produto->PRODUTO_NOME ? $produto->PRODUTO_NOME : 'Produto não identificado' }}</h5>
-                                <p class="card-text-price">R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}</p>
+                                <p class="card-text-price">
+                                    @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
+                                    Gratuito
+                                    @else
+                                    R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}
+                                    @endif
+                                </p>
                             </div>
                         </div>
                     </a>
