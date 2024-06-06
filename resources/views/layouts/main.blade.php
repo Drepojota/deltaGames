@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="{{ Auth::check() ? '/cart' : '/login' }}">
+                    <a href="{{ Auth::check() ? route('cart') : route('login.index', ['redirect' => 'cart']) }}">
                         <span class="icon"><i class="bi bi-cart"></i></span>
                         <span class="txt-link">Cart</span>
                     </a>

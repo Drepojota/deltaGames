@@ -1,14 +1,17 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('login.login');
+        $redirect = $request->input('redirect', 'home');
+        return view('login.login', ['redirect' => $redirect]);
     }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -18,9 +21,10 @@ class LoginController extends Controller
             'identifier.required' => 'O campo de email ou CPF é obrigatório',
             'USUARIO_SENHA.required' => 'O campo senha é obrigatório',
         ]);
-    
+
         $identifier = $request->input('identifier');
         $password = $request->input('USUARIO_SENHA');
+        $redirect = $request->input('redirect', 'home');
 
         // Verifica se é um email ou CPF
         if (filter_var($identifier, FILTER_VALIDATE_EMAIL)) {
@@ -31,11 +35,12 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('home')->with('success', 'Logado com sucesso');
+            return redirect()->intended($redirect)->with('success', 'Logado com sucesso');
         }
 
         return back()->withErrors(['identifier' => 'Email/CPF ou senha inválidos']);
     }
+
     public function destroy()
     {
         Auth::logout();
