@@ -68,11 +68,12 @@ p a{
     color:#9fa2a6;
 }
 
-.error-message {
-    color: red;
+.error {
+    color: rgba(216, 212, 212, 0.87);
     font-size: 0.875em;
     margin-top: 5px;
     display: block;
+    margin-left: 6px;
 }
 .success-message {
     color: green;

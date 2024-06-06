@@ -24,7 +24,7 @@
                     <label class="text-box" for="password">Digite sua senha:</label>
                     <input type="password" name="USUARIO_SENHA" placeholder="Sua senha" required style="margin: 3px; height:45px">
                     @error('identifier')
-                        <span class="error-message">{{ $message }}</span>
+                        <span class="error">{{ $message }}</span>
                     @enderror
                 </div>
                 
