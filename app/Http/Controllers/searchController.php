@@ -11,16 +11,16 @@ class searchController extends Controller
         $query = $request->input('search');
         $produtos = Produto::where('PRODUTO_NOME', 'LIKE', "%{$query}%")->get();
         if ($query) {
-            $pesquisas = Produto::where('PRODUTO_NOME', 'like', "%{$query}%")
+            $produtos = Produto::where('PRODUTO_NOME', 'like', "%{$query}%")
                 ->orWhere('PRODUTO_DESC', 'like', "%{$query}%")
                 ->orWhereHas('categoria', function ($queryCategoria) use ($query) {
                     $queryCategoria->where('CATEGORIA_NOME', 'like', "%{$query}%");
                 })
                 ->get();
         } else {
-            $pesquisas = Produto::all();
+            $produtos = Produto::all();
         }
-        
+
         return view('Produtos.search', ['produtos' => $produtos, 'query' => $query]);
     }
 }
