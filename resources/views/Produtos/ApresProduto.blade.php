@@ -23,12 +23,12 @@
                         <h5>{{ $produto->PRODUTO_NOME }}</h5>
                     </div>
                     <div class="txtCompra-apres">
-                        <form action="{{ Auth::check() ? route('cart.add', ['produto_id' => $produto->PRODUTO_ID]) : route('login.index') }}" method="POST">
+                        <form action="{{ Auth::check() ? route('cart.add', ['produto_id' => $produto->PRODUTO_ID]) : route('login.index', ['redirect' => url()->current() . '?produto_id=' . $produto->PRODUTO_ID]) }}" method="POST">
                             @csrf
                             @if (Auth::check())
-                            <button type="submit" class="acquire-button">Adquirir</button>
+                                <button type="submit" class="acquire-button">Adquirir</button>
                             @else
-                            <a href="{{ route('login.index') }}" class="acquire-button">Adquirir</a>
+                                <a href="{{ route('login.index', ['redirect' => url()->current() . '?produto_id=' . $produto->PRODUTO_ID]) }}" class="acquire-button">Adquirir</a>
                             @endif
                         </form>
                         <div class="p-apres">
