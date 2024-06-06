@@ -4,8 +4,8 @@
 @section('content')
 
 <div class="container container-pesquisa">
-    <form class="d-flex pesquisa-home" role="search">
-        <input id="search" class="form-control me-2 barraPesquisa" type="search" placeholder="Encontre jogos e muito mais" aria-label="Search">
+    <form class="d-flex pesquisa-home" role="search" method="get" action="{{ route('search')}}">
+        <input id="search" name="search" class="form-control me-2 barraPesquisa" type="search" placeholder="Encontre jogos e muito mais" aria-label="Search">
     </form>
 </div>
 
@@ -20,7 +20,7 @@
             <div class="container-compra-apres">
                 <div class="compra-apres">
                     <div class="txt-tituloCompra">
-                    <h5>{{ $produto->PRODUTO_NOME }}</h5>
+                        <h5>{{ $produto->PRODUTO_NOME }}</h5>
                     </div>
                     <div class="txtCompra-apres">
                         <form action="{{ Auth::check() ? route('cart.add', ['produto_id' => $produto->PRODUTO_ID]) : route('login.index') }}" method="POST">

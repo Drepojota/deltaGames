@@ -11,11 +11,10 @@
 <div class="body">
 
   <div class="container container-pesquisa">
-    <form class="d-flex pesquisa-home" role="search">
-      <input id="search" class="form-control me-2 barraPesquisa" type="search" placeholder="Encontre jogos e muito mais" aria-label="Search">
+    <form class="d-flex pesquisa-home" role="search" method="get" action="{{ route('search')}}">
+      <input id="search" name="search" class="form-control me-2 barraPesquisa" type="search" placeholder="Encontre jogos e muito mais" aria-label="Search">
     </form>
   </div>
-
   <article>
     <div class="filtroCat container">
       <div class="title-page d-flex align-items-center">
@@ -68,7 +67,13 @@
               @endif
               <div class="card-body">
                 <h5 class="card-title">{{ $produto->PRODUTO_NOME ? $produto->PRODUTO_NOME : 'Produto não identificado' }}</h5>
-                <p class="card-text-price">R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}</p>
+                <p class="card-text-price">
+                  @if ($produto->PRODUTO_PRECO == 0.00 || $produto->PRODUTO_PRECO == "00.00")
+                  Gratuito
+                  @else
+                  R$ {{ number_format($produto->PRODUTO_PRECO, 2, ',', '.') }}
+                  @endif
+                </p>
               </div>
             </div>
           </a>

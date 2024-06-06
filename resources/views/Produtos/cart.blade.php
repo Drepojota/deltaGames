@@ -113,7 +113,7 @@
                         </p>
                     </div>
                 </div>
-            </a>    
+            </a>
         </div>
         @endforeach
     </div>

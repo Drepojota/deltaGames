@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\carrinhoController;
+use App\Http\Controllers\searchController;
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -17,7 +19,6 @@ Route::middleware('auth')->group(function () {
 });
 require __DIR__ . '/auth.php';
 Route::get('/home', [ProdutoController::class, 'home'])->name('home');
-Route::get('/search', [ProdutoController::class, 'search'])->name('search');
 
 //O group é usado para garantir que apenas usuários autenticados possam acessar as rotas dentro do Carrinho
 Route::middleware('auth')->group(function () {
@@ -31,6 +32,7 @@ Route::get('/dev', [ProdutoController::class, 'dev']);
 Route::get('/jogo/{produto}', [ProdutoController::class, 'indexProduto']);
 Route::get('/jogos', [ProdutoController::class, 'allProducts']);
 Route::get('/jogos/{categoria}', [CategoriaController::class, 'indexCat']);
+Route::get('/search', [searchController::class, 'search'])->name('search');
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'index')->name('login.index');
     Route::post('/login', 'store')->name('login.store');

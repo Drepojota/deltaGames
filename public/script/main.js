@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function ordenarJogos(tipoOrdenacao, nomeFiltro) {
     document.getElementById('dropdownFiltro').innerText = nomeFiltro;
     var jogos = $(".jogo");
+    
     if (tipoOrdenacao === 'AZ') {
         jogos.sort(function (a, b) {
             return $(a).find(".card-title").text().localeCompare($(b).find(".card-title").text());
@@ -56,19 +57,21 @@ function ordenarJogos(tipoOrdenacao, nomeFiltro) {
         });
     } else if (tipoOrdenacao === 'menorPreco') {
         jogos.sort(function (a, b) {
-            var precoA = parseFloat($(a).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
-            var precoB = parseFloat($(b).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
+            var precoA = $(a).find(".card-text-price").text().trim() === "Gratuito" ? 0.00 : parseFloat($(a).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
+            var precoB = $(b).find(".card-text-price").text().trim() === "Gratuito" ? 0.00 : parseFloat($(b).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
             return precoA - precoB;
         });
     } else if (tipoOrdenacao === 'maiorPreco') {
         jogos.sort(function (a, b) {
-            var precoA = parseFloat($(a).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
-            var precoB = parseFloat($(b).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
+            var precoA = $(a).find(".card-text-price").text().trim() === "Gratuito" ? 0.00 : parseFloat($(a).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
+            var precoB = $(b).find(".card-text-price").text().trim() === "Gratuito" ? 0.00 : parseFloat($(b).find(".card-text-price").text().replace('R$', '').trim().replace(',', '.'));
             return precoB - precoA;
         });
     }
+    
     $("#jogosContainer").html(jogos);
 }
+
 
 //home
 

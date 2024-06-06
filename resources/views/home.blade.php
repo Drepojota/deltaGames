@@ -13,8 +13,8 @@
     {{--Conteúdo abaixo--}}
 
     <div class="container container-pesquisa">
-      <form class="d-flex pesquisa-home" role="search">
-        <input id="search" class="form-control me-2 barraPesquisa" type="search" placeholder="Encontre jogos e muito mais" aria-label="Search">
+      <form class="d-flex pesquisa-home" role="search" method="get" action="{{ route('search')}}">
+        <input id="search" name="search" class="form-control me-2 barraPesquisa" type="search" placeholder="Encontre jogos e muito mais" aria-label="Search">
       </form>
     </div>
 
