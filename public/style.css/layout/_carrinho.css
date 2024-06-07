@@ -111,7 +111,7 @@ tbody tr td {
 }
 
 .delete:hover {
-    background: red;
+    background: #6AA7C1;
 }
 
 .qtd {
@@ -227,7 +227,7 @@ aside .box .total{
 }
 
 aside .button-cleanmarket:hover {
-    background-color: red;
+    background-color:  #6AA7C1;
 }
 
 .calculo {
