@@ -26,7 +26,7 @@
                         <form action="{{ Auth::check() ? route('cart.add', ['produto_id' => $produto->PRODUTO_ID]) : route('login.index', ['redirect' => url()->current() . '?produto_id=' . $produto->PRODUTO_ID]) }}" method="POST">
                             @csrf
                             @if (Auth::check())
-                                <button type="submit" class="acquire-button">Adquirir</button>
+                                <button type="submit" class="acquire-button logged-in">Adquirir</button>
                             @else
                                 <a href="{{ route('login.index', ['redirect' => url()->current() . '?produto_id=' . $produto->PRODUTO_ID]) }}" class="acquire-button">Adquirir</a>
                             @endif
