@@ -55,7 +55,7 @@
                 </tbody>
             </table>
         </section>
-
+   
         <aside>
             <div class="box">
                 <header>Resumo</header>
@@ -69,6 +69,7 @@
                     <button class="purchase-button"><img src="/image/carrinho/carrinho2.png">Finalizar Pedido</button>
                 </div>
                 <div>
+                
                     <form action="{{ route('cart.clear') }}" method="POST" onsubmit="return confirm('Tem certeza que deseja limpar o carrinho?');">
                         @csrf
                         @method('DELETE')
@@ -76,11 +77,29 @@
                     </form>
                 </div>
             </div>
+            
         </aside>
     </div>
+   <!-- Modal -->
+<div class="modal fade" id="modal-finalizar-pedido" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Pedido realizado com sucesso!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-text">Sua compra foi realizada com sucesso! Em breve você receberá um e-mail com as informações do pedido.</p>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
-
-<div class="container containerJogos-home">
+    <div class="container containerJogos-home">
     <div class="row" id="jogosContainer">
         <div class="txtContainer-jogo">
             <h2>Aproveite e Compre</h2>
@@ -119,5 +138,16 @@
     </div>
 </div>
 
+  
+  
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const buttonFinalizarPedido = document.querySelector(".purchase-button");
+      buttonFinalizarPedido.addEventListener("click", function() {
+        const modal = new bootstrap.Modal(document.getElementById("modal-finalizar-pedido"));
+        modal.show();
+      });
+    });
+  </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 @endsection

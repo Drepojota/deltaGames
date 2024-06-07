@@ -175,7 +175,7 @@ aside .button {
 }
 
 aside .purchase-button:hover {
-    background-color: green;
+    background-color: #6AA7C1;
 }
 
 aside button img {
@@ -233,5 +233,10 @@ aside .button-cleanmarket:hover {
 .calculo {
     display: none;
     visibility: hidden;
+}
+
+.modal-text {
+    text-align: center;
+    color: black;
 }
    
